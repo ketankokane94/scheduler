@@ -3,8 +3,8 @@ import java.util.*;
 import static java.time.temporal.ChronoUnit.MINUTES;
 
 public class main {
-    private  static String WAKE_UP_AT = "09:30";
-    private  static String SLEEP_AT = "23:59";
+    private  static String WAKE_UP_AT = "09:30 AM";
+    private  static String SLEEP_AT = "11:59 PM";
 
     private static List<Project> getProjects() {
         List<Project> result = new ArrayList<>();
@@ -16,13 +16,13 @@ public class main {
     }
 
     private static void getActivities(List<base> thinsgToDo) {
-        thinsgToDo.add(new Activities("Lunch", "12:00", "12:45"));
-        thinsgToDo.add(new Activities("Dinner", "20:00", "20:30"));
+        thinsgToDo.add(new Activities("Lunch", "12:00 PM", "12:45 PM"));
+        thinsgToDo.add(new Activities("Dinner", "08:00 PM", "08:30 PM"));
     }
 
     private static void getEvents(List<base> thinsgToDo) {
-        thinsgToDo.add(new Event("Gym", "15:00", "16:00"));
-        thinsgToDo.add(new Event("Meet Kavya", "16:00", "17:30"));
+        thinsgToDo.add(new Event("Gym", "03:00 PM", "04:00 PM"));
+        thinsgToDo.add(new Event("Meet Kavya", "04:00 PM", "05:30 PM"));
     }
 
     public static void main(String[] args) {
@@ -30,8 +30,8 @@ public class main {
         List<base> thinsgToDo = new ArrayList<>();
         getEvents(thinsgToDo);
         getActivities(thinsgToDo);
-        thinsgToDo.add(1, new Activities("wake up ", "00:00", WAKE_UP_AT));
-        thinsgToDo.add(new Activities("Sleep", SLEEP_AT, "09:30"));
+        thinsgToDo.add(1, new Activities("wake up ", "12:00 AM", WAKE_UP_AT));
+        thinsgToDo.add(new Activities("Sleep", SLEEP_AT, "09:30 AM"));
 
         Collections.sort(thinsgToDo);
         List<Interval> unassignedInterval = getUnPlannedIntervals(thinsgToDo);

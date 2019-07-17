@@ -19,7 +19,7 @@ public class Interval extends  base{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder(super.toString());
-        sb.append(" Duration= "+intervalLength);
+        //sb.append(" Duration= "+intervalLength);
         return sb.toString();
     }
 }

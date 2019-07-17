@@ -1,5 +1,4 @@
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import static java.time.temporal.ChronoUnit.MINUTES;
 
 public class base implements Comparable{
@@ -15,8 +14,8 @@ public class base implements Comparable{
 
     public base(String name, String from, String to) {
         Name = name;
-        this.from = LocalTime.parse(from, DateTimeFormatter.ofPattern("HH:mm"));
-        this.to = LocalTime.parse(to, DateTimeFormatter.ofPattern("HH:mm"));;
+        this.from = LocalTime.parse(from, Constant.format);
+        this.to = LocalTime.parse(to, Constant.format);;
     }
 
     @Override
@@ -26,8 +25,8 @@ public class base implements Comparable{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Name= '" + Name + '\'');
-        sb.append(" From = " + from.toString());
-        sb.append(" to = " + to.toString());
+        sb.append(" From = " + from.format(Constant.format));
+        sb.append(" to = " + to.format(Constant.format));
         return sb.toString();
     }
 }
