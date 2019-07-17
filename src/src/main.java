@@ -1,21 +1,50 @@
 import java.util.*;
 
+import static java.time.temporal.ChronoUnit.MINUTES;
+
 public class main {
+    private  static String WAKE_UP_AT = "09:30";
+    private  static String SLEEP_AT = "23:59";
+    private static List<Project> getProjects() {
+        List<Project> result = new ArrayList<>();
+        result.add(new Project("Leet code", 0, 3));
+        result.add(new Project("work on ", 0, 18));
+        result.add(new Project("packing for ROC", 0, 5));
+        result.add(new Project("Shopping for ROC", 0, 8));
+        return result;
+    }
+
+    private static void getActivities(List<base> thinsgToDo) {
+        thinsgToDo.add(new Activities("Lunch", "12:00", "12:45"));
+        thinsgToDo.add(new Activities("Dinner", "20:00", "20:30"));
+       // thinsgToDo.add(new Activities("Gym", 1500, 1600));
+
+    }
+
+    private static void getEvents(List<base> thinsgToDo) {
+        thinsgToDo.add(new Event("Gym", "15:00", "16:00"));
+        thinsgToDo.add(new Event("Meet Kavya", "16:00", "17:30"));
+
+//        [[1400, 1515,"Lect CV"], [930, 1045,"Lect FIS"],[1530, 1645,"SS"]]
+    }
+
     public static void main(String[] args) {
 
         List<base> thinsgToDo = new ArrayList<>();
         getEvents(thinsgToDo);
         getActivities(thinsgToDo);
-        thinsgToDo.add(1, new Activities("wake up ", 0, 530));
-        thinsgToDo.add(new Activities("Sleep", 2230, 2359));
+        thinsgToDo.add(1, new Activities("wake up ", "00:00", WAKE_UP_AT));
+        thinsgToDo.add(new Activities("Sleep", SLEEP_AT, "09:30"));
+
         Collections.sort(thinsgToDo);
         List<Interval> unassignedInterval = getUnPlannedIntervals(thinsgToDo);
         PriorityQueue<Interval> unassignedIntervalQueue = splitIntevals(unassignedInterval);
-        unassignedInterval = null;
+
         List<Project> projects = getProjects();
         List<Interval> assignedInterval = assign(projects, unassignedIntervalQueue);
-        // merge assigned and unassigned intervals
+
         addPlannedIntervals(assignedInterval, thinsgToDo);
+
         for (Interval item : assignedInterval)
             System.out.println(item);
     }
@@ -53,59 +82,37 @@ public class main {
     private static PriorityQueue<Interval> splitIntevals(List<Interval> list) {
         Comparator<Interval> comparator = (o1, o2) -> o2.intervalLength - o1.intervalLength;
         PriorityQueue<Interval> result = new PriorityQueue<>(comparator);
-
+        int max_interval = 120;
         for (Interval item : list) {
-            if (item.intervalLength > 200) {
+            if (item.intervalLength > max_interval) {
                 int i = 0;
                 do {
-                    result.add(new Interval(item.Name, item.from + i, item.from + 200));
-                    item.intervalLength -= 200;
-                    i += 200;
+                    result.add(new Interval(item.Name, item.from.plusMinutes(i), item.from.plusMinutes(max_interval)));
+                    item.intervalLength -= max_interval;
+                    i += max_interval;
                 }
-                while (item.intervalLength > 200);
-                item.from += i;
+                while (item.intervalLength > max_interval);
+               // item.from += i;
+                item.from = item.from.plusMinutes(i);
                 //item.to  = item.from + item.intervalLength;
             }
-            result.add(item);
+            if(item.intervalLength > 30)
+                result.add(item);
         }
         return result;
     }
 
     private static List<Interval> getUnPlannedIntervals(List<base> thinsgToDo) {
-
         List<Interval> result = new ArrayList<>();
         int min_interval = 55;
-        //   int max_interval = 200;
+
         for (int i = 1; i < thinsgToDo.size(); i++) {
-            if (thinsgToDo.get(i).from - thinsgToDo.get(i - 1).to >= min_interval) {
-                result.add(new Interval("Not assigned", thinsgToDo.get(i - 1).to + 10, thinsgToDo.get(i).from - 10));
+            int interval = (int) MINUTES.between(thinsgToDo.get(i - 1).to, thinsgToDo.get(i).from);
+            if (interval >= min_interval) {
+                result.add(new Interval("NA", thinsgToDo.get(i - 1).to.plusMinutes(10), thinsgToDo.get(i).from.minusMinutes(10)));
             }
         }
         return result;
     }
-
-    private static List<Project> getProjects() {
-        List<Project> result = new ArrayList<>();
-        result.add(new Project("Leet code", 0, 3));
-        result.add(new Project("code a project", 0, 18));
-        result.add(new Project("Interview Prep", 0, 180));
-        result.add(new Project("packing for ROC", 0, 5));
-        result.add(new Project("Shopping for ROC", 0, 8));
-        return result;
-    }
-
-    private static void getActivities(List<base> thinsgToDo) {
-        thinsgToDo.add(new Activities("Lunch", 1200, 1245));
-        thinsgToDo.add(new Activities("Dinner", 2000, 2030));
-
-    }
-
-    private static void getEvents(List<base> thinsgToDo) {
-        thinsgToDo.add(new Event("Lect CV ", 1400, 1515));
-        thinsgToDo.add(new Event("Lect FIS ", 930, 1045));
-        thinsgToDo.add(new Event("Lect SS ", 1530, 1645));
-//        [[1400, 1515,"Lect CV"], [930, 1045,"Lect FIS"],[1530, 1645,"SS"]]
-    }
-
 
 }
