@@ -16,7 +16,6 @@ public class main {
         List<Interval> assignedInterval = assign(projects, unassignedIntervalQueue);
         // merge assigned and unassigned intervals
         addPlannedIntervals(assignedInterval, thinsgToDo);
-
         for (Interval item : assignedInterval)
             System.out.println(item);
     }
@@ -79,7 +78,7 @@ public class main {
         //   int max_interval = 200;
         for (int i = 1; i < thinsgToDo.size(); i++) {
             if (thinsgToDo.get(i).from - thinsgToDo.get(i - 1).to >= min_interval) {
-                result.add(new Interval("Not assigned", thinsgToDo.get(i - 1).to, thinsgToDo.get(i).from));
+                result.add(new Interval("Not assigned", thinsgToDo.get(i - 1).to + 10, thinsgToDo.get(i).from - 10));
             }
         }
         return result;
