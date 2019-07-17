@@ -5,6 +5,7 @@ import static java.time.temporal.ChronoUnit.MINUTES;
 public class main {
     private  static String WAKE_UP_AT = "09:30";
     private  static String SLEEP_AT = "23:59";
+
     private static List<Project> getProjects() {
         List<Project> result = new ArrayList<>();
         result.add(new Project("Leet code", 0, 3));
@@ -17,15 +18,11 @@ public class main {
     private static void getActivities(List<base> thinsgToDo) {
         thinsgToDo.add(new Activities("Lunch", "12:00", "12:45"));
         thinsgToDo.add(new Activities("Dinner", "20:00", "20:30"));
-       // thinsgToDo.add(new Activities("Gym", 1500, 1600));
-
     }
 
     private static void getEvents(List<base> thinsgToDo) {
         thinsgToDo.add(new Event("Gym", "15:00", "16:00"));
         thinsgToDo.add(new Event("Meet Kavya", "16:00", "17:30"));
-
-//        [[1400, 1515,"Lect CV"], [930, 1045,"Lect FIS"],[1530, 1645,"SS"]]
     }
 
     public static void main(String[] args) {
@@ -63,7 +60,7 @@ public class main {
         while (!projects.isEmpty() && !unassignedIntervalQueue.isEmpty()) {
             // check if the project can be completed assigned ??
             Interval temp = unassignedIntervalQueue.poll();
-            if (temp.intervalLength >= projects.get(index).required_hours) {
+            if (temp.intervalLength >= projects.get(index).required_minutes) {
                 // means can be assigned and project can be removed and new interval can be created
                 temp.Name = projects.get(index).name;
                 result.add(temp);
@@ -71,7 +68,7 @@ public class main {
             } else {
                 temp.Name = projects.get(index).name;
                 result.add(temp);
-                projects.get(index).required_hours -= temp.intervalLength;
+                projects.get(index).required_minutes -= temp.intervalLength;
             }
             index = (index + 1) % projects.size();
         }
