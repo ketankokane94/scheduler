@@ -14,6 +14,7 @@ public class Interval extends  base{
         sb.append(from < 1200 ? from + " AM " : (from - 1200) + " PM ");
         sb.append(" To= ");
         sb.append(to < 1200 ? to + " AM " : (to - 1200) + " PM ");
+        sb.append(" Duration= "+intervalLength);
         return sb.toString();
     }
 }

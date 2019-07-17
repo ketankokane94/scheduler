@@ -2,16 +2,16 @@ import java.util.*;
 
 public class main {
     public static void main(String[] args) {
+
         List<base> thinsgToDo = new ArrayList<>();
         getEvents(thinsgToDo);
         getActivities(thinsgToDo);
         thinsgToDo.add(1, new Activities("wake up ", 0, 530));
         thinsgToDo.add(new Activities("Sleep", 2230, 2359));
-
-
+        Collections.sort(thinsgToDo);
         List<Interval> unassignedInterval = getUnPlannedIntervals(thinsgToDo);
         PriorityQueue<Interval> unassignedIntervalQueue = splitIntevals(unassignedInterval);
-
+        unassignedInterval = null;
         List<Project> projects = getProjects();
         List<Interval> assignedInterval = assign(projects, unassignedIntervalQueue);
         // merge assigned and unassigned intervals
@@ -73,7 +73,7 @@ public class main {
     }
 
     private static List<Interval> getUnPlannedIntervals(List<base> thinsgToDo) {
-        Collections.sort(thinsgToDo);
+
         List<Interval> result = new ArrayList<>();
         int min_interval = 55;
         //   int max_interval = 200;
@@ -96,9 +96,9 @@ public class main {
     }
 
     private static void getActivities(List<base> thinsgToDo) {
-        thinsgToDo.add(new Activities("Lunch", 1300, 1330));
+        thinsgToDo.add(new Activities("Lunch", 1200, 1245));
         thinsgToDo.add(new Activities("Dinner", 2000, 2030));
-//        [1300, 1330,"Lunch"],[2000, 2030,"Dinner"]
+
     }
 
     private static void getEvents(List<base> thinsgToDo) {
