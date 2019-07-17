@@ -9,7 +9,7 @@ public class main {
     private static List<Project> getProjects() {
         List<Project> result = new ArrayList<>();
         result.add(new Project("Leet code", 0, 3));
-        result.add(new Project("work on ", 0, 18));
+        result.add(new Project("work on Scheduler Issue", 0, 18));
         result.add(new Project("packing for ROC", 0, 5));
         result.add(new Project("Shopping for ROC", 0, 8));
         return result;
@@ -18,6 +18,7 @@ public class main {
     private static void getActivities(List<base> thinsgToDo) {
         thinsgToDo.add(new Activities("Lunch", "12:00 PM", "12:45 PM"));
         thinsgToDo.add(new Activities("Dinner", "08:00 PM", "08:30 PM"));
+        thinsgToDo.add(new Activities("Relax", "08:30 PM", "11:59 PM"));
     }
 
     private static void getEvents(List<base> thinsgToDo) {
@@ -30,7 +31,7 @@ public class main {
         List<base> thinsgToDo = new ArrayList<>();
         getEvents(thinsgToDo);
         getActivities(thinsgToDo);
-        thinsgToDo.add(1, new Activities("wake up ", "12:00 AM", WAKE_UP_AT));
+        thinsgToDo.add(1, new Activities("wake up", "12:00 AM", WAKE_UP_AT));
         thinsgToDo.add(new Activities("Sleep", SLEEP_AT, "09:30 AM"));
 
         Collections.sort(thinsgToDo);
