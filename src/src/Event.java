@@ -5,7 +5,7 @@ import java.util.Date;
  */
 public class Event extends  base{
 
-    public Event(String name, int from, int to ) {
+    public Event(String name, String from, String to ) {
         super(name, from, to);
 
     }
