@@ -12,4 +12,13 @@ public class Project {
         this.completedTime = completedTime ;
         this.required_minutes = remainingTime * 60;
     }
+
+    @Override
+    public String toString() {
+        return "Project{" +
+                "completedTime=" + completedTime +
+                ", required_minutes=" + required_minutes +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

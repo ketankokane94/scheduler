@@ -26,29 +26,33 @@ public class main {
     }
 
     private static void getEvents(List<base> thinsgToDo) {
-        //thinsgToDo.add(new Event("Gym", "03:00 PM", "04:00 PM"));
+        thinsgToDo.add(new Event("geeta visit", "01:00 PM", "03:00 PM"));
         //thinsgToDo.add(new Event("Meet Kavya", "04:00 PM", "05:30 PM"));
     }
 
     public static void main(String[] args) {
 
-        List<base> thinsgToDo = new ArrayList<>();
-        getEvents(thinsgToDo);
-        getActivities(thinsgToDo);
-        thinsgToDo.add(1, new Activities("wake up", "12:00 AM", WAKE_UP_AT));
-        thinsgToDo.add(new Activities("Sleep", SLEEP_AT, "09:30 AM"));
+        List<base> tasks = new ArrayList<>();
+        getEvents(tasks);
+        getActivities(tasks);
+        tasks.add(1, new Activities("wake up", "12:00 AM", WAKE_UP_AT));
+        tasks.add(new Activities("Sleep", SLEEP_AT, SLEEP_AT));
 
-        Collections.sort(thinsgToDo);
-        List<Interval> unassignedInterval = getUnPlannedIntervals(thinsgToDo);
+        Collections.sort(tasks);
+        List<Interval> unassignedInterval = getUnPlannedIntervals(tasks);
         PriorityQueue<Interval> unassignedIntervalQueue = splitIntevals(unassignedInterval);
 
         List<Project> projects = getProjects();
         List<Interval> assignedInterval = assign(projects, unassignedIntervalQueue);
 
-        addPlannedIntervals(assignedInterval, thinsgToDo);
+        addPlannedIntervals(assignedInterval, tasks);
 
         for (Interval item : assignedInterval)
             System.out.println(item);
+
+        for (Project proj : projects){
+            System.out.println(proj);
+        }
     }
 
     private static void addPlannedIntervals(List<Interval> assignedInterval, List<base> thinsgToDo) {
@@ -67,10 +71,14 @@ public class main {
             Interval temp = unassignedIntervalQueue.poll();
             if (temp.intervalLength >= projects.get(index).required_minutes) {
                 // means can be assigned and project can be removed and new interval can be created
+                LocalTime end = temp.to;
                 temp.Name = projects.get(index).name;
                 temp.to = temp.from.plusMinutes(projects.get(index).required_minutes);
                 result.add(temp);
                 projects.remove(index);
+
+//            if(item.intervalLength > 30)
+              unassignedIntervalQueue.add(new Interval("NA", temp.to, end));
             } else {
                 temp.Name = projects.get(index).name;
                 result.add(temp);
@@ -93,7 +101,7 @@ public class main {
                 int i = 0;
                 do {
                     newStartTime = item.from.plusMinutes(i);
-                    result.add(new Interval(item.Name, newStartTime, newStartTime.plusMinutes(max_interval)));
+                    result.add(new Interval(item.Name, newStartTime, newStartTime.plusMinutes(max_interval - 15)));
                     item.intervalLength -= max_interval;
                     i += max_interval;
                 }
