@@ -7,7 +7,7 @@ import static java.time.temporal.ChronoUnit.MINUTES;
 
 public class Scheduler {
 
-    public static List<Interval> main() {
+    public List<Interval> run(boolean verbose) {
 
         final List<Task> tasks = new PopulateTask().getTask();
         List<Project> projects = new PopulateTask().getProjects();
@@ -15,7 +15,8 @@ public class Scheduler {
         PriorityQueue<Interval>  unassignedInterval = getIntervalsToSchedule(tasks);
         List<Interval> assignedInterval = schedule(projects, unassignedInterval);
         syncIntervals(assignedInterval, tasks);
-        //printToConsole(projects, assignedInterval);
+        if(verbose)
+            printToConsole(projects, assignedInterval);
 
         return assignedInterval;
     }
@@ -63,7 +64,6 @@ public class Scheduler {
         }
         return result;
     }
-
 
     private static PriorityQueue<Interval> splitIntevals(List<Interval> list) {
         Comparator<Interval> comparator = (o1, o2) -> o2.intervalLength - o1.intervalLength;

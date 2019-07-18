@@ -63,7 +63,7 @@ public class CalendarQuickstart {
         return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
     }
 
-    public static void main(String... args) throws IOException, GeneralSecurityException {
+    public void pushToGoogleCalandar(List<Interval> intervals) throws IOException, GeneralSecurityException {
         // Build a new authorized API client service.
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
         Calendar service = new Calendar.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
@@ -73,9 +73,6 @@ public class CalendarQuickstart {
         //ensure the authenticated user has write access to the calendar with
         // the calendarId you provided (for example by calling calendarList.get()
         // for the calendarId and checking the accessRole).
-
-
-        final List<Interval> intervals = Scheduler.main();
 
         for(Interval interval: intervals){
             if(interval.Name.equals("wake up") || interval.Name.equals("Sleep")){
