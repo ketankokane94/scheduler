@@ -5,39 +5,39 @@ import java.util.*;
 
 import static java.time.temporal.ChronoUnit.MINUTES;
 
-public class main {
+public class Scheduler {
 
     public static List<Interval> main() {
 
-        PopulateTask populateTask = new PopulateTask();
-        final List<Task> tasks = populateTask.getTask();
+        final List<Task> tasks = new PopulateTask().getTask();
+        List<Project> projects = new PopulateTask().getProjects();
         Collections.sort(tasks);
-        List<Interval> unassignedInterval = getUnPlannedIntervals(tasks);
-        PriorityQueue<Interval> unassignedIntervalQueue = splitIntevals(unassignedInterval);
+        PriorityQueue<Interval>  unassignedInterval = getIntervalsToSchedule(tasks);
+        List<Interval> assignedInterval = schedule(projects, unassignedInterval);
+        syncIntervals(assignedInterval, tasks);
+        //printToConsole(projects, assignedInterval);
 
-        List<Project> projects = populateTask.getProjects();
-        List<Interval> assignedInterval = assign(projects, unassignedIntervalQueue);
+        return assignedInterval;
+    }
 
-        addPlannedIntervals(assignedInterval, tasks);
-
+    private static void printToConsole(List<Project> projects, List<Interval> assignedInterval) {
         for (Interval item : assignedInterval)
             System.out.println(item);
 
         for (Project proj : projects){
             System.out.println(proj);
         }
-        return assignedInterval;
     }
 
-    private static void addPlannedIntervals(List<Interval> assignedInterval, List<Task> thinsgToDo) {
+    private static void syncIntervals(List<Interval> assignedInterval, List<Task> thinsgToDo) {
         for (Task thingToDo : thinsgToDo) {
             assignedInterval.add(new Interval(thingToDo.Name, thingToDo.from, thingToDo.to));
         }
         Collections.sort(assignedInterval);
     }
 
-    private static List<Interval> assign(List<Project> projects, PriorityQueue<Interval> unassignedIntervalQueue) {
-        // while something to assign and any empty intervals remaining r
+    private static List<Interval> schedule(List<Project> projects, PriorityQueue<Interval> unassignedIntervalQueue) {
+        // while something to schedule and any empty intervals remaining r
         List<Interval> result = new ArrayList<>();
         int index = 0;
         while (!projects.isEmpty() && !unassignedIntervalQueue.isEmpty()) {
@@ -90,7 +90,7 @@ public class main {
         return result;
     }
 
-    private static List<Interval> getUnPlannedIntervals(List<Task> thinsgToDo) {
+    private static PriorityQueue<Interval> getIntervalsToSchedule(List<Task> thinsgToDo) {
         List<Interval> result = new ArrayList<>();
         int min_interval = 55;
 
@@ -100,7 +100,8 @@ public class main {
                 result.add(new Interval("NA", thinsgToDo.get(i - 1).to.plusMinutes(10), thinsgToDo.get(i).from.minusMinutes(10)));
             }
         }
-        return result;
+        return splitIntevals(result);
+
     }
 
 }

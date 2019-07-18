@@ -136,5 +136,6 @@ gradle-app.setting
 
 # End of https://www.gitignore.io/api/java,gradle,intellij
 tokens/StoredCredential
-testModule/src/main/resources/credentials.json
+testModule/src/Scheduler/resources/credentials.json
 *.jar
+testModule/src/main/resources/credentials.json

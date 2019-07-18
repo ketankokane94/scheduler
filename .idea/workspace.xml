@@ -54,13 +54,13 @@
         <counts>
           <entry key="dummy" value="8" />
           <entry key="gradle" value="2" />
-          <entry key="java" value="1153" />
+          <entry key="java" value="1244" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="2" />
-          <entry key="JAVA" value="1078" />
+          <entry key="JAVA" value="1169" />
           <entry key="PLAIN_TEXT" value="8" />
           <entry key="Scratch" value="75" />
         </counts>
@@ -83,16 +83,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testModule/src/main/java/main.java">
+        <entry file="file://$PROJECT_DIR$/testModule/src/main/java/Scheduler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="420">
+              <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#addPlannedIntervals#0;class#main#0" />
-                <element signature="method#assign#0;class#main#0" />
+                <element signature="method#schedule#0;class#Scheduler#0" />
                 <element signature="method#splitIntevals#0;class#main#0" />
-                <element signature="method#getUnPlannedIntervals#0;class#main#0" />
               </folding>
             </state>
           </provider>
@@ -548,9 +547,10 @@
         <option value="$PROJECT_DIR$/testModule/src/main/java/models/Project.java" />
         <option value="$PROJECT_DIR$/testModule/src/main/java/CalendarQuickstart.java" />
         <option value="$PROJECT_DIR$/testModule/src/main/java/models/Constant.java" />
-        <option value="$PROJECT_DIR$/testModule/src/main/java/main.java" />
         <option value="$PROJECT_DIR$/testModule/src/main/java/PopulateTask.java" />
         <option value="$PROJECT_DIR$/testModule/src/main/java/SchedulerController.java" />
+        <option value="$PROJECT_DIR$/testModule/src/main/java/main.java" />
+        <option value="$PROJECT_DIR$/testModule/src/main/java/Scheduler.java" />
       </list>
     </option>
   </component>
@@ -616,6 +616,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="extract.method.default.visibility" value="private" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -646,8 +647,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main" />
+    <configuration name="Scheduler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Scheduler" />
       <module name="testModule_main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -669,7 +670,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.main" />
-      <item itemvalue="Application.main (1)" />
+      <item itemvalue="Application.Scheduler" />
       <item itemvalue="Application.CalendarQuickstart" />
       <item itemvalue="Java Scratch.Scratch" />
     </list>
@@ -677,7 +678,7 @@
       <list>
         <item itemvalue="Application.CalendarQuickstart" />
         <item itemvalue="Java Scratch.Scratch" />
-        <item itemvalue="Application.main (1)" />
+        <item itemvalue="Application.Scheduler" />
         <item itemvalue="Application.main" />
       </list>
     </recent_temporary>
@@ -696,7 +697,7 @@
     <frame x="0" y="23" width="1440" height="852" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21959943" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21959943" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -704,7 +705,7 @@
       <window_info anchor="bottom" id="Build" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.42631578" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.42631578" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -954,16 +955,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testModule/src/main/java/main.java">
+    <entry file="file://$PROJECT_DIR$/testModule/src/main/java/Scheduler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="420">
+          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#addPlannedIntervals#0;class#main#0" />
-            <element signature="method#assign#0;class#main#0" />
+            <element signature="method#schedule#0;class#Scheduler#0" />
             <element signature="method#splitIntevals#0;class#main#0" />
-            <element signature="method#getUnPlannedIntervals#0;class#main#0" />
           </folding>
         </state>
       </provider>

@@ -75,7 +75,7 @@ public class CalendarQuickstart {
         // for the calendarId and checking the accessRole).
 
 
-        final List<Interval> intervals = main.main();
+        final List<Interval> intervals = Scheduler.main();
 
         for(Interval interval: intervals){
             if(interval.Name.equals("wake up") || interval.Name.equals("Sleep")){
