@@ -1,9 +1,11 @@
+package models;
+
 import java.time.LocalTime;
 import static java.time.temporal.ChronoUnit.MINUTES;
 
 public class base implements Comparable{
-    String Name;
-    LocalTime from, to;
+    public String Name;
+    public LocalTime from, to;
 
 
     public base(String taskName, LocalTime from, LocalTime to) {

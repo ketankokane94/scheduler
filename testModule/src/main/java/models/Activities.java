@@ -1,3 +1,5 @@
+package models;
+
 /**
  * {"name":"Sleep","from":"2230","to":"0530","how_long":7}
  */

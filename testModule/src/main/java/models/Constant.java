@@ -1,3 +1,5 @@
+package models;
+
 import java.time.format.DateTimeFormatter;
 
 public class Constant {

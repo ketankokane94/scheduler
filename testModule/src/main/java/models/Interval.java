@@ -1,10 +1,11 @@
-import java.time.LocalTime;
+package models;
 
+import java.time.LocalTime;
 import static java.time.temporal.ChronoUnit.MINUTES;
 
 public class Interval extends  base{
 
-    int intervalLength;
+    public int intervalLength;
 
     public Interval(String taskName, String from, String to) {
         super(taskName, from, to);

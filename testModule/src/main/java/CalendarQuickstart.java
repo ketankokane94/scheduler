@@ -14,6 +14,7 @@ import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.CalendarScopes;
 import com.google.api.services.calendar.model.Event;
 import com.google.api.services.calendar.model.EventDateTime;
+import models.Interval;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -107,7 +108,7 @@ public class CalendarQuickstart {
             event.setEnd(end);
             String calendarId = "primary";
 //            event = service.events().insert(calendarId, event).execute();
-//            System.out.printf("Event created: %s\n", event.getHtmlLink());
+//            System.out.printf("models.Event created: %s\n", event.getHtmlLink());
         }
 
 

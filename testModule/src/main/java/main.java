@@ -1,3 +1,5 @@
+import models.*;
+
 import java.time.LocalTime;
 import java.util.*;
 
@@ -13,9 +15,9 @@ public class main {
         result.add(new Project("Leet code", 0, 3));
         result.add(new Project("Call HDFC", 0, 1));
 
-        //result.add(new Project("work on Scheduler Issue", 0, 18));
-        //result.add(new Project("packing for ROC", 0, 5));
-        //result.add(new Project("Shopping for ROC", 0, 8));
+        //result.add(new models.Project("work on Scheduler Issue", 0, 18));
+        //result.add(new models.Project("packing for ROC", 0, 5));
+        //result.add(new models.Project("Shopping for ROC", 0, 8));
         return result;
     }
 
@@ -27,7 +29,7 @@ public class main {
 
     private static void getEvents(List<base> thinsgToDo) {
         thinsgToDo.add(new Event("geeta visit", "01:00 PM", "03:00 PM"));
-        //thinsgToDo.add(new Event("Meet Kavya", "04:00 PM", "05:30 PM"));
+        //thinsgToDo.add(new models.Event("Meet Kavya", "04:00 PM", "05:30 PM"));
     }
 
     public static List<Interval> main() {
