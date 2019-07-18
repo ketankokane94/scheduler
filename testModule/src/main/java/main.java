@@ -30,13 +30,13 @@ public class main {
         //thinsgToDo.add(new Event("Meet Kavya", "04:00 PM", "05:30 PM"));
     }
 
-    public static void main(String[] args) {
+    public static List<Interval> main() {
 
         List<base> tasks = new ArrayList<>();
         getEvents(tasks);
         getActivities(tasks);
         tasks.add(1, new Activities("wake up", "12:00 AM", WAKE_UP_AT));
-        tasks.add(new Activities("Sleep", SLEEP_AT, SLEEP_AT));
+        tasks.add(new Activities("Sleep", SLEEP_AT, WAKE_UP_AT));
 
         Collections.sort(tasks);
         List<Interval> unassignedInterval = getUnPlannedIntervals(tasks);
@@ -47,12 +47,13 @@ public class main {
 
         addPlannedIntervals(assignedInterval, tasks);
 
-//        for (Interval item : assignedInterval)
-//            System.out.println(item);
-//
-//        for (Project proj : projects){
-//            System.out.println(proj);
-//        }
+        for (Interval item : assignedInterval)
+            System.out.println(item);
+
+        for (Project proj : projects){
+            System.out.println(proj);
+        }
+        return assignedInterval;
     }
 
     private static void addPlannedIntervals(List<Interval> assignedInterval, List<base> thinsgToDo) {
