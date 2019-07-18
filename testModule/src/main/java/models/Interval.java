@@ -3,7 +3,7 @@ package models;
 import java.time.LocalTime;
 import static java.time.temporal.ChronoUnit.MINUTES;
 
-public class Interval extends  base{
+public class Interval extends Task {
 
     public int intervalLength;
 

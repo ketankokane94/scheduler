@@ -3,18 +3,18 @@ package models;
 import java.time.LocalTime;
 import static java.time.temporal.ChronoUnit.MINUTES;
 
-public class base implements Comparable{
+public class Task implements Comparable{
     public String Name;
     public LocalTime from, to;
 
 
-    public base(String taskName, LocalTime from, LocalTime to) {
+    public Task(String taskName, LocalTime from, LocalTime to) {
         this.from = from;
         this.to = to;
         this.Name = taskName;
     }
 
-    public base(String name, String from, String to) {
+    public Task(String name, String from, String to) {
         Name = name;
         this.from = LocalTime.parse(from, Constant.format);
         this.to = LocalTime.parse(to, Constant.format);;
@@ -22,8 +22,10 @@ public class base implements Comparable{
 
     @Override
     public int compareTo(Object o) {
-        return (int)MINUTES.between(((base) o).from, this.from );
+        return (int)MINUTES.between(((Task) o).from, this.from );
     }
+
+    // later on remove all the to string methods
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Name= '" + Name + '\'');

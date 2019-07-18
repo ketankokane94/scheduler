@@ -5,6 +5,7 @@ package models;
  */
 public class Project {
     //Date deadline;
+
     public int completedTime, required_minutes;
     public String name;
 

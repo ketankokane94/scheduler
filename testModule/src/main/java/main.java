@@ -21,24 +21,24 @@ public class main {
         return result;
     }
 
-    private static void getActivities(List<base> thinsgToDo) {
-        thinsgToDo.add(new Activities("Lunch", "03:00 PM", "03:45 PM"));
-        thinsgToDo.add(new Activities("Dinner", "08:00 PM", "08:30 PM"));
-        thinsgToDo.add(new Activities("Relax", "08:30 PM", "11:59 PM"));
+    private static void getActivities(List<Task> thinsgToDo) {
+        thinsgToDo.add(new Activity("Lunch", "03:00 PM", "03:45 PM"));
+        thinsgToDo.add(new Activity("Dinner", "08:00 PM", "08:30 PM"));
+        thinsgToDo.add(new Activity("Relax", "08:30 PM", "11:59 PM"));
     }
 
-    private static void getEvents(List<base> thinsgToDo) {
+    private static void getEvents(List<Task> thinsgToDo) {
         thinsgToDo.add(new Event("geeta visit", "01:00 PM", "03:00 PM"));
         //thinsgToDo.add(new models.Event("Meet Kavya", "04:00 PM", "05:30 PM"));
     }
 
     public static List<Interval> main() {
 
-        List<base> tasks = new ArrayList<>();
+        List<Task> tasks = new ArrayList<>();
         getEvents(tasks);
         getActivities(tasks);
-        tasks.add(1, new Activities("wake up", "12:00 AM", WAKE_UP_AT));
-        tasks.add(new Activities("Sleep", SLEEP_AT, WAKE_UP_AT));
+        tasks.add(1, new Activity("wake up", "12:00 AM", WAKE_UP_AT));
+        tasks.add(new Activity("Sleep", SLEEP_AT, WAKE_UP_AT));
 
         Collections.sort(tasks);
         List<Interval> unassignedInterval = getUnPlannedIntervals(tasks);
@@ -58,8 +58,8 @@ public class main {
         return assignedInterval;
     }
 
-    private static void addPlannedIntervals(List<Interval> assignedInterval, List<base> thinsgToDo) {
-        for (base thingToDo : thinsgToDo) {
+    private static void addPlannedIntervals(List<Interval> assignedInterval, List<Task> thinsgToDo) {
+        for (Task thingToDo : thinsgToDo) {
             assignedInterval.add(new Interval(thingToDo.Name, thingToDo.from, thingToDo.to));
         }
         Collections.sort(assignedInterval);
@@ -119,7 +119,7 @@ public class main {
         return result;
     }
 
-    private static List<Interval> getUnPlannedIntervals(List<base> thinsgToDo) {
+    private static List<Interval> getUnPlannedIntervals(List<Task> thinsgToDo) {
         List<Interval> result = new ArrayList<>();
         int min_interval = 55;
 
