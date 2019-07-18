@@ -6,45 +6,16 @@ import java.util.*;
 import static java.time.temporal.ChronoUnit.MINUTES;
 
 public class main {
-    private  static String WAKE_UP_AT = "09:30 AM";
-    private  static String SLEEP_AT = "11:59 PM";
-
-    private static List<Project> getProjects() {
-        List<Project> result = new ArrayList<>();
-        result.add(new Project("Learn arrays", 0, 3));
-        result.add(new Project("Leet code", 0, 3));
-        result.add(new Project("Call HDFC", 0, 1));
-
-        //result.add(new models.Project("work on Scheduler Issue", 0, 18));
-        //result.add(new models.Project("packing for ROC", 0, 5));
-        //result.add(new models.Project("Shopping for ROC", 0, 8));
-        return result;
-    }
-
-    private static void getActivities(List<Task> thinsgToDo) {
-        thinsgToDo.add(new Activity("Lunch", "03:00 PM", "03:45 PM"));
-        thinsgToDo.add(new Activity("Dinner", "08:00 PM", "08:30 PM"));
-        thinsgToDo.add(new Activity("Relax", "08:30 PM", "11:59 PM"));
-    }
-
-    private static void getEvents(List<Task> thinsgToDo) {
-        thinsgToDo.add(new Event("geeta visit", "01:00 PM", "03:00 PM"));
-        //thinsgToDo.add(new models.Event("Meet Kavya", "04:00 PM", "05:30 PM"));
-    }
 
     public static List<Interval> main() {
 
-        List<Task> tasks = new ArrayList<>();
-        getEvents(tasks);
-        getActivities(tasks);
-        tasks.add(1, new Activity("wake up", "12:00 AM", WAKE_UP_AT));
-        tasks.add(new Activity("Sleep", SLEEP_AT, WAKE_UP_AT));
-
+        PopulateTask populateTask = new PopulateTask();
+        final List<Task> tasks = populateTask.getTask();
         Collections.sort(tasks);
         List<Interval> unassignedInterval = getUnPlannedIntervals(tasks);
         PriorityQueue<Interval> unassignedIntervalQueue = splitIntevals(unassignedInterval);
 
-        List<Project> projects = getProjects();
+        List<Project> projects = populateTask.getProjects();
         List<Interval> assignedInterval = assign(projects, unassignedIntervalQueue);
 
         addPlannedIntervals(assignedInterval, tasks);

@@ -85,7 +85,7 @@ public class CalendarQuickstart {
             Event event = new Event()
                     .setSummary(interval.Name);
                     //.setLocation("800 Howard St., San Francisco, CA 94103")
-                    //.setDescription("A chance to hear more about Google's developer products.");
+                   // .setDescription("A chance to hear more about Google's developer products.");
 
             LocalDateTime date = LocalDate.now().atTime(interval.from);
             //date.format()
@@ -107,8 +107,9 @@ public class CalendarQuickstart {
 
             event.setEnd(end);
             String calendarId = "primary";
-//            event = service.events().insert(calendarId, event).execute();
-//            System.out.printf("models.Event created: %s\n", event.getHtmlLink());
+            event = service.events().insert(calendarId, event).execute();
+
+            System.out.printf("models.Event created: %s\n", event.getHtmlLink());
         }
 
 
