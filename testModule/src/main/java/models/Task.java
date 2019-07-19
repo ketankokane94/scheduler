@@ -1,16 +1,13 @@
 package models;
 
-import com.google.api.client.util.DateTime;
+import org.joda.time.DateTime;
+import org.joda.time.Minutes;
 
-import java.time.LocalTime;
 
-import static java.time.temporal.ChronoUnit.MINUTES;
+public class Task implements Comparable {
 
-public class Task implements Comparable{
-
-    public String summary;
-    public LocalTime from;
-    public LocalTime to;
+    private String summary;
+    private int duration;
     private String description;
     private DateTime start;
     private DateTime end;
@@ -19,18 +16,23 @@ public class Task implements Comparable{
         this.summary = summary;
         this.start = start;
         this.end = end;
+        duration = Minutes.minutesBetween(start, end).getMinutes();
     }
 
-    public Task(String taskName, LocalTime from, LocalTime to) {
-        this.from = from;
-        this.to = to;
-        this.summary = taskName;
+    public String getSummary() {
+        return summary;
     }
 
-    public Task(String name, String from, String to) {
-        summary = name;
-        this.from = LocalTime.parse(from, Constant.format);
-        this.to = LocalTime.parse(to, Constant.format);;
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 
     public String getDescription() {
@@ -59,15 +61,18 @@ public class Task implements Comparable{
 
     @Override
     public int compareTo(Object o) {
-        return (int)MINUTES.between(((Task) o).from, this.from );
+        Task task = (Task) (o);
+        return start.compareTo(task.start);
     }
 
-    // later on remove all the to string methods
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("summary= '" + summary + '\'');
-        sb.append(" From = " + from.format(Constant.format));
-        sb.append(" to = " + to.format(Constant.format));
-        return sb.toString();
+        return "Task{" +
+                "summary='" + summary + '\'' +
+                ", duration=" + duration +
+                ", description='" + description + '\'' +
+                ", start=" + start +
+                ", end=" + end +
+                '}';
     }
 }

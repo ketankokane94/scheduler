@@ -15,7 +15,7 @@ import com.google.api.services.calendar.CalendarScopes;
 
 import com.google.api.services.calendar.model.Event;
 import com.google.api.services.calendar.model.EventDateTime;
-import models.Interval;
+import models.Task;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -65,51 +65,51 @@ public class CalendarQuickstart {
         return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
     }
 
-    public void pushToGoogleCalandar(List<Interval> intervals) throws IOException, GeneralSecurityException {
-        // Build a new authorized API client service.
-        Calendar service = getCalendar();
-
-        //ensure the authenticated user has write access to the calendar with
-        // the calendarId you provided (for example by calling calendarList.get()
-        // for the calendarId and checking the accessRole).
-
-        for(Interval interval: intervals){
-            if(interval.summary.equals("wake up") || interval.summary.equals("Sleep")){
-                continue;
-            }
-
-            Event event = new Event()
-                    .setSummary(interval.summary);
-                    //.setLocation("800 Howard St., San Francisco, CA 94103")
-                   // .setDescription("A chance to hear more about Google's developer products.");
-
-            LocalDateTime date = LocalDate.now().atTime(interval.from);
-            //date.format()
-
-            System.out.println(date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.ss") )+"+5:30");
-
-            DateTime startDateTime = new DateTime(date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.ss"))+"+05:30");
-
-
-            EventDateTime start = new EventDateTime()
-                    .setDateTime(startDateTime);
-            event.setStart(start);
-
-
-            date = LocalDate.now().atTime(interval.to);
-            DateTime endDateTime = new DateTime(date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.ss"))+"+05:30");
-            EventDateTime end = new EventDateTime()
-                    .setDateTime(endDateTime);
-
-            event.setEnd(end);
-            String calendarId = "primary";
-            event = service.events().insert(calendarId, event).execute();
-
-            System.out.printf("models.Event created: %s\n", event.getHtmlLink());
-        }
-
-
-    }
+//    public void pushToGoogleCalandar(List<Task> intervals) throws IOException, GeneralSecurityException {
+//        // Build a new authorized API client service.
+//        Calendar service = getCalendar();
+//
+//        //ensure the authenticated user has write access to the calendar with
+//        // the calendarId you provided (for example by calling calendarList.get()
+//        // for the calendarId and checking the accessRole).
+//
+//        for(Task interval: intervals){
+//            if(interval.getSummary().equals("wake up") || interval.getSummary().equals("Sleep")){
+//                continue;
+//            }
+//
+//            Event event = new Event()
+//                    .setSummary(interval.getSummary());
+//                    //.setLocation("800 Howard St., San Francisco, CA 94103")
+//                   // .setDescription("A chance to hear more about Google's developer products.");
+//
+//            LocalDateTime date = LocalDate.now().atTime(interval.from);
+//            //date.format()
+//
+//            System.out.println(date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.ss") )+"+5:30");
+//
+//            DateTime startDateTime = new DateTime(date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.ss"))+"+05:30");
+//
+//
+//            EventDateTime start = new EventDateTime()
+//                    .setDateTime(startDateTime);
+//            event.setStart(start);
+//
+//
+//            date = LocalDate.now().atTime(interval.to);
+//            DateTime endDateTime = new DateTime(date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.ss"))+"+05:30");
+//            EventDateTime end = new EventDateTime()
+//                    .setDateTime(endDateTime);
+//
+//            event.setEnd(end);
+//            String calendarId = "primary";
+//            event = service.events().insert(calendarId, event).execute();
+//
+//            System.out.printf("models.Event created: %s\n", event.getHtmlLink());
+//        }
+//
+//
+//    }
 
     public Calendar getCalendar() throws GeneralSecurityException, IOException {
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();

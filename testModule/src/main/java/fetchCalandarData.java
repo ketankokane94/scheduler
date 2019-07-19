@@ -26,7 +26,8 @@ public class fetchCalandarData {
             Task task = new Task(event.getSummary(),
                     Constant.convertToDateTime(event.getStart()),
                     Constant.convertToDateTime(event.getEnd()));
-        tasks.add(task);
+            final Event.ExtendedProperties extendedProperties = event.getExtendedProperties();
+            tasks.add(task);
         }
 
     }
