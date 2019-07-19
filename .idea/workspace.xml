@@ -41,14 +41,14 @@
           <entry key="bat" value="1" />
           <entry key="gradle" value="6" />
           <entry key="gradlew" value="1" />
-          <entry key="java" value="88" />
+          <entry key="java" value="89" />
           <entry key="json" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="6" />
-          <entry key="JAVA" value="85" />
+          <entry key="JAVA" value="86" />
           <entry key="JSON" value="2" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Scratch" value="3" />
@@ -56,16 +56,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="8" />
+          <entry key="dummy" value="47" />
           <entry key="gradle" value="3" />
-          <entry key="java" value="3529" />
+          <entry key="java" value="3540" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="3" />
-          <entry key="JAVA" value="3454" />
-          <entry key="PLAIN_TEXT" value="8" />
+          <entry key="JAVA" value="3465" />
+          <entry key="PLAIN_TEXT" value="47" />
           <entry key="Scratch" value="75" />
         </counts>
       </usages-collector>
@@ -89,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testModule/src/main/java/models/Task.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="14" column="60" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="60" />
+            <state relative-caret-position="290">
+              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#154#155#0" expanded="true" />
@@ -105,10 +105,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testModule/src/main/java/PopulateTask.java">
+        <entry file="file://$PROJECT_DIR$/testModule/src/main/java/service/GetTaskService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="540">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -116,11 +116,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testModule/src/test/java/SchedulerTest.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testModule/src/main/java/service/GetProjectService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testModule/src/test/java/SchedulerServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+              <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -172,11 +184,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testModule/src/main/java/Scheduler.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testModule/src/main/java/service/SchedulerService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="48" column="120" selection-start-line="48" selection-start-column="120" selection-end-line="48" selection-end-column="120" />
+            <state relative-caret-position="440">
+              <caret line="103" column="56" selection-start-line="103" selection-start-column="56" selection-end-line="103" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -189,8 +201,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -619,13 +631,16 @@
         <option value="$PROJECT_DIR$/testModule/src/test/java/models/TaskTest.java" />
         <option value="$PROJECT_DIR$/testModule/src/main/java/SchedulerController.java" />
         <option value="$PROJECT_DIR$/testModule/src/main/java/models/Event.java" />
-        <option value="$PROJECT_DIR$/testModule/src/main/java/models/Task.java" />
         <option value="$PROJECT_DIR$/testModule/src/main/java/models/Constant.java" />
         <option value="$PROJECT_DIR$/testModule/src/main/java/models/Project.java" />
         <option value="$PROJECT_DIR$/testModule/src/main/java/Scheduler.java" />
         <option value="$PROJECT_DIR$/testModule/src/main/java/PopulateTask.java" />
         <option value="$PROJECT_DIR$/testModule/src/main/java/CalendarQuickstart.java" />
         <option value="$PROJECT_DIR$/testModule/src/test/java/SchedulerTest.java" />
+        <option value="$PROJECT_DIR$/testModule/src/main/java/models/Task.java" />
+        <option value="$PROJECT_DIR$/testModule/src/main/java/service/GetTaskService.java" />
+        <option value="$PROJECT_DIR$/testModule/src/main/java/service/GetProjectService.java" />
+        <option value="$PROJECT_DIR$/testModule/src/main/java/service/SchedulerService.java" />
       </list>
     </option>
   </component>
@@ -682,15 +697,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="scheduler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="scheduler" type="462c0819:PsiDirectoryNode" />
-              <item name="testModule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="scheduler" type="b2602c69:ProjectViewProjectNode" />
@@ -758,21 +765,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SchedulerTest.run">
-    <configuration name="SchedulerTest.getIntervalsToSchedule" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SchedulerServiceTest.run">
+    <configuration name="SchedulerServiceTest.getIntervalsToSchedule" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testModule_test" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SchedulerTest" />
+      <option name="MAIN_CLASS_NAME" value="SchedulerServiceTest" />
       <option name="METHOD_NAME" value="getIntervalsToSchedule" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SchedulerTest.run" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SchedulerServiceTest.run" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testModule_test" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SchedulerTest" />
+      <option name="MAIN_CLASS_NAME" value="SchedulerServiceTest" />
       <option name="METHOD_NAME" value="run" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -827,15 +834,15 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.TaskTest.checkIfSorts" />
-      <item itemvalue="JUnit.SchedulerTest.getIntervalsToSchedule" />
+      <item itemvalue="JUnit.SchedulerServiceTest.getIntervalsToSchedule" />
       <item itemvalue="JUnit.TaskTest.getTimeIntervalBetweenStartAndEnd" />
       <item itemvalue="JUnit.TaskTest" />
-      <item itemvalue="JUnit.SchedulerTest.run" />
+      <item itemvalue="JUnit.SchedulerServiceTest.run" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SchedulerTest.run" />
-        <item itemvalue="JUnit.SchedulerTest.getIntervalsToSchedule" />
+        <item itemvalue="JUnit.SchedulerServiceTest.run" />
+        <item itemvalue="JUnit.SchedulerServiceTest.getIntervalsToSchedule" />
         <item itemvalue="JUnit.TaskTest" />
         <item itemvalue="JUnit.TaskTest.getTimeIntervalBetweenStartAndEnd" />
         <item itemvalue="JUnit.TaskTest.checkIfSorts" />
@@ -853,15 +860,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TaskTest_getTimeIntervalBetweenStartAndEnd - 2019.07.19 at 15h 48m 40s.xml">
-      <configuration name="TaskTest.getTimeIntervalBetweenStartAndEnd" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TaskTest_getTimeIntervalBetweenStartAndEnd - 2019.07.19 at 15h 54m 07s.xml">
-      <configuration name="TaskTest.getTimeIntervalBetweenStartAndEnd" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TaskTest_getTimeIntervalBetweenStartAndEnd - 2019.07.19 at 15h 54m 51s.xml">
-      <configuration name="TaskTest.getTimeIntervalBetweenStartAndEnd" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TaskTest_getTimeIntervalBetweenStartAndEnd - 2019.07.19 at 15h 55m 06s.xml">
       <configuration name="TaskTest.getTimeIntervalBetweenStartAndEnd" configurationId="JUnit" />
     </history-entry>
@@ -883,19 +881,28 @@
     <history-entry file="SchedulerTest_getIntervalsToSchedule - 2019.07.19 at 17h 07m 23s.xml">
       <configuration name="SchedulerTest.getIntervalsToSchedule" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SchedulerTest_getIntervalsToSchedule - 2019.07.19 at 17h 07m 35s.xml">
+      <configuration name="SchedulerTest.getIntervalsToSchedule" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SchedulerTest_run - 2019.07.19 at 17h 08m 00s.xml">
+      <configuration name="SchedulerTest.run" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SchedulerTest_run - 2019.07.19 at 17h 08m 26s.xml">
+      <configuration name="SchedulerTest.run" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="852" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22460657" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22460657" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.42631578" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.42631578" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -933,19 +940,19 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/testModule/src/main/java/Scheduler.java</url>
+          <url>file://$PROJECT_DIR$/testModule/src/main/java/service/SchedulerService.java</url>
           <line>103</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/testModule/src/main/java/SchedulerController.java</url>
-          <line>8</line>
+          <line>9</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/testModule/src/test/java/SchedulerTest.java</url>
+          <url>file://$PROJECT_DIR$/testModule/src/test/java/SchedulerServiceTest.java</url>
           <line>23</line>
           <properties />
           <option name="timeStamp" value="12" />
@@ -957,7 +964,7 @@
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/testModule/src/test/java/SchedulerTest.java</url>
+          <url>file://$PROJECT_DIR$/testModule/src/test/java/SchedulerServiceTest.java</url>
           <line>29</line>
           <properties />
           <option name="timeStamp" value="15" />
@@ -1169,22 +1176,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testModule/src/main/java/models/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="14" column="60" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#154#155#0" expanded="true" />
-            <element signature="e#184#185#0" expanded="true" />
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#268#269#0" expanded="true" />
-            <element signature="e#663#664#0" expanded="true" />
-            <element signature="e#694#695#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testModule/src/main/java/models/Project.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1202,26 +1193,6 @@
             <element signature="e#768#769#0" expanded="true" />
             <element signature="e#808#809#0" expanded="true" />
             <element signature="e#840#841#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testModule/src/main/java/Scheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="120" selection-start-line="48" selection-start-column="120" selection-end-line="48" selection-end-column="120" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testModule/src/main/java/PopulateTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1247,10 +1218,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testModule/src/test/java/SchedulerTest.java">
+    <entry file="file://$PROJECT_DIR$/testModule/src/test/java/SchedulerServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testModule/src/main/java/models/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#154#155#0" expanded="true" />
+            <element signature="e#184#185#0" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+            <element signature="e#268#269#0" expanded="true" />
+            <element signature="e#663#664#0" expanded="true" />
+            <element signature="e#694#695#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testModule/src/main/java/service/GetTaskService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testModule/src/main/java/service/GetProjectService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testModule/src/main/java/service/SchedulerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="103" column="56" selection-start-line="103" selection-start-column="56" selection-end-line="103" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

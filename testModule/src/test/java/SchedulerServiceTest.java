@@ -1,14 +1,13 @@
 import models.Task;
 import org.joda.time.DateTime;
 import org.junit.Test;
+import service.SchedulerService;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
-public class SchedulerTest {
+public class SchedulerServiceTest {
 
     @Test
     public void getIntervalsToSchedule() {
@@ -21,12 +20,12 @@ public class SchedulerTest {
         tasks.add(late);
         tasks.add(early);
         Collections.sort(tasks);
-        Scheduler.getIntervalsToSchedule(tasks);
+        SchedulerService.getIntervalsToSchedule(tasks);
     }
 
     @Test
     public void run() {
-        Scheduler scheduler = new Scheduler();
-        scheduler.run(true);
+        SchedulerService schedulerService = new SchedulerService();
+        schedulerService.run(true);
     }
 }

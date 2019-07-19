@@ -1,3 +1,5 @@
+package service;
+
 import models.Project;
 import models.Task;
 import org.joda.time.DateTime;
@@ -7,7 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-public class PopulateTask {
+public class GetTaskService {
     public static String today_date = "2019-07-19T";
 
     public List<Task> getTask() {
@@ -32,14 +34,5 @@ public class PopulateTask {
 
         return tasks;
     }
-
-    public List<Project> getProjects() {
-        List<Project> result = new ArrayList<>();
-        result.add(new Project("Learn arrays", 0, 3*60));
-        result.add(new Project("Leet code", 0, 3*60));
-        result.add(new Project("Call HDFC", 0, 1*60));
-        return result;
-    }
-
 
 }

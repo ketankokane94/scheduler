@@ -1,3 +1,5 @@
+package service;
+
 import models.Constant;
 import models.Project;
 import models.Task;
@@ -9,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class Scheduler {
+public class SchedulerService {
 
     private static void printToConsole(List<Project> projects, List<Task> assignedInterval) {
         for (Task item : assignedInterval)
@@ -98,8 +100,8 @@ public class Scheduler {
 
     public List<Task> run(boolean verbose) {
 
-        final List<Task> tasks = new PopulateTask().getTask();
-        List<Project> projects = new PopulateTask().getProjects();
+        final List<Task> tasks = new GetTaskService().getTask();
+        List<Project> projects = new GetProjectService().getProjects();
         Collections.sort(tasks);
         PriorityQueue<Task> unassignedInterval = getIntervalsToSchedule(tasks);
         List<Task> assignedInterval = schedule(projects, unassignedInterval);
