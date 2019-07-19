@@ -74,12 +74,12 @@ public class CalendarQuickstart {
         // for the calendarId and checking the accessRole).
 
         for(Interval interval: intervals){
-            if(interval.Name.equals("wake up") || interval.Name.equals("Sleep")){
+            if(interval.summary.equals("wake up") || interval.summary.equals("Sleep")){
                 continue;
             }
 
             Event event = new Event()
-                    .setSummary(interval.Name);
+                    .setSummary(interval.summary);
                     //.setLocation("800 Howard St., San Francisco, CA 94103")
                    // .setDescription("A chance to hear more about Google's developer products.");
 

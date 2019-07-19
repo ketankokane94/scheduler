@@ -2,9 +2,12 @@ import com.google.api.client.util.DateTime;
 import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.model.Event;
 import com.google.api.services.calendar.model.Events;
+import models.Constant;
+import models.Task;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class fetchCalandarData {
@@ -18,12 +21,13 @@ public class fetchCalandarData {
                 //.setTimeMax()
                 .execute();
         List<Event> items = events.getItems();
-
+        List<Task> tasks = new ArrayList<>();
         for (Event event : items){
-            event.getStart();
-            event.getEnd();
-            event.getSummary();
-            event.getDescription();
+            Task task = new Task(event.getSummary(),
+                    Constant.convertToDateTime(event.getStart()),
+                    Constant.convertToDateTime(event.getEnd()));
+        tasks.add(task);
         }
+
     }
 }

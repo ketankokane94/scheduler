@@ -32,7 +32,7 @@ public class Scheduler {
 
     private static void syncIntervals(List<Interval> assignedInterval, List<Task> thinsgToDo) {
         for (Task thingToDo : thinsgToDo) {
-            assignedInterval.add(new Interval(thingToDo.Name, thingToDo.from, thingToDo.to));
+            assignedInterval.add(new Interval(thingToDo.summary, thingToDo.from, thingToDo.to));
         }
         Collections.sort(assignedInterval);
     }
@@ -47,7 +47,7 @@ public class Scheduler {
             if (temp.intervalLength >= projects.get(index).required_minutes) {
                 // means can be assigned and project can be removed and new interval can be created
                 LocalTime end = temp.to;
-                temp.Name = projects.get(index).name;
+                temp.summary = projects.get(index).name;
                 temp.to = temp.from.plusMinutes(projects.get(index).required_minutes);
                 result.add(temp);
                 projects.remove(index);
@@ -55,7 +55,7 @@ public class Scheduler {
 //            if(item.intervalLength > 30)
               unassignedIntervalQueue.add(new Interval("NA", temp.to, end));
             } else {
-                temp.Name = projects.get(index).name;
+                temp.summary = projects.get(index).name;
                 result.add(temp);
                 projects.get(index).required_minutes -= temp.intervalLength;
             }
@@ -75,7 +75,7 @@ public class Scheduler {
                 int i = 0;
                 do {
                     newStartTime = item.from.plusMinutes(i);
-                    result.add(new Interval(item.Name, newStartTime, newStartTime.plusMinutes(max_interval - 15)));
+                    result.add(new Interval(item.summary, newStartTime, newStartTime.plusMinutes(max_interval - 15)));
                     item.intervalLength -= max_interval;
                     i += max_interval;
                 }
