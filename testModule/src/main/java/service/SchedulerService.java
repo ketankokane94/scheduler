@@ -98,17 +98,16 @@ public class SchedulerService {
 
     }
 
-    public List<Task> run(boolean verbose) {
+    public List<Task> run(List<Task> tasks, List<Project> projects, boolean verbose) {
 
-        final List<Task> tasks = new GetTaskService().getTask();
-        List<Project> projects = new GetProjectService().getProjects();
         Collections.sort(tasks);
         PriorityQueue<Task> unassignedInterval = getIntervalsToSchedule(tasks);
         List<Task> assignedInterval = schedule(projects, unassignedInterval);
-        mergeTasks(assignedInterval, tasks);
-        if (verbose)
-            printToConsole(projects, assignedInterval);
-
+        printToConsole(projects, assignedInterval);
+//        if (verbose){
+//            mergeTasks(assignedInterval, tasks);
+//            printToConsole(projects, assignedInterval);
+//        }
         return assignedInterval;
     }
 

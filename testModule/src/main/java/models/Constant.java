@@ -4,18 +4,31 @@ import com.google.api.services.calendar.model.EventDateTime;
 
 import org.joda.time.DateTime;
 
-import java.time.format.DateTimeFormatter;
 
 public class Constant {
-    public static DateTimeFormatter format = DateTimeFormatter.ofPattern("hh:mm a");
-    public  static String WAKE_UP_AT = "09:30 AM";
-    public  static String SLEEP_AT = "11:59 PM";
+
     public  static int min_interval = 55;
     public  static int max_interval = 120;
 
 
+    // get Tomorrow's date
+
+    public static com.google.api.client.util.DateTime  TOMORROWPLUSONE (){
+        return new com.google.api.client.util.DateTime(DateTime.now().withTimeAtStartOfDay().plusDays(2).getMillis());
+    }
+
+    public static com.google.api.client.util.DateTime  TOMORROW (){
+        return new com.google.api.client.util.DateTime(DateTime.now().withTimeAtStartOfDay().plusDays(1).getMillis());
+    }
+
     public static DateTime convertToDateTime(EventDateTime eventDateTime){
-        return new DateTime(eventDateTime.getDate());
+        return new DateTime(eventDateTime.getDateTime().getValue());
+
+
+    }
+
+    public static com.google.api.client.util.DateTime convertToGoogleDateTime(DateTime dateTime){
+        return new com.google.api.client.util.DateTime(dateTime.getMillis());
     }
 
 }

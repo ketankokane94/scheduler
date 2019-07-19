@@ -26,6 +26,6 @@ public class SchedulerServiceTest {
     @Test
     public void run() {
         SchedulerService schedulerService = new SchedulerService();
-        schedulerService.run(true);
+        schedulerService.run(null,null,true);
     }
 }
