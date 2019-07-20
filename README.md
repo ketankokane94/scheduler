@@ -1,5 +1,5 @@
-# scheduler
-automatic scheduler
+# schedulerService
+automatic schedulerService
 
 Need a tool to make a schedule for me
 
