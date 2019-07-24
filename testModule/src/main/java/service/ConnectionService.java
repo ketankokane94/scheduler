@@ -23,9 +23,9 @@ import java.util.List;
 
 public class ConnectionService {
 
-    private static final String APPLICATION_NAME = "Schedule Maker by Ketan";
-    private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
-    private static final String TOKENS_DIRECTORY_PATH = "tokens";
+    static final String APPLICATION_NAME = "Schedule Maker by Ketan";
+    static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
+    static final String TOKENS_DIRECTORY_PATH = "tokens";
 
     /**
      * Global instance of the scopes required by this quickstart.
