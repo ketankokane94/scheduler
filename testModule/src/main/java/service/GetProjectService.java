@@ -1,6 +1,6 @@
-package service;
+package java.service;
 
-import models.Project;
+import test.java.models.models.Project;
 
 import java.util.ArrayList;
 import java.util.List;

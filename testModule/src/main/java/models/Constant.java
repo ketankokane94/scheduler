@@ -1,4 +1,4 @@
-package models;
+package java.models;
 
 import com.google.api.services.calendar.model.EventDateTime;
 

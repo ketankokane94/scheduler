@@ -1,10 +1,10 @@
-package service;
+package java.service;
 
 import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.model.Event;
 import com.google.api.services.calendar.model.Events;
-import models.Constant;
-import models.Task;
+import test.java.models.models.Constant;
+import test.java.models.models.Task;
 import org.joda.time.DateTime;
 
 import java.io.IOException;
@@ -16,7 +16,7 @@ import java.util.List;
 
 public class GetTaskService {
     public List<Task> pullFromCalendar() {
-        ConnectionService c = new ConnectionService();
+        service.ConnectionService c = new service.ConnectionService();
         Calendar service = null;
         try {
             service = c.getCalendar();

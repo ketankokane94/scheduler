@@ -1,8 +1,8 @@
-package service;
+package java.service;
 
-import models.Constant;
-import models.Project;
-import models.Task;
+import test.java.models.models.Constant;
+import test.java.models.models.Project;
+import test.java.models.models.Task;
 import org.joda.time.DateTime;
 import org.joda.time.Minutes;
 

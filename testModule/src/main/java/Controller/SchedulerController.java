@@ -1,7 +1,7 @@
-package Controller;
+package java.Controller;
 
-import models.Project;
-import models.Task;
+import test.java.models.models.Project;
+import test.java.models.models.Task;
 import service.GetProjectService;
 import service.GetTaskService;
 import service.PutTaskInCalendarService;

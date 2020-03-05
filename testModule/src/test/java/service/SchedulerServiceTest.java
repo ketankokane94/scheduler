@@ -1,6 +1,6 @@
-package test;
+package java.service;
 
-import models.Task;
+import test.java.models.models.Task;
 import org.joda.time.DateTime;
 import org.junit.Test;
 import service.SchedulerService;
