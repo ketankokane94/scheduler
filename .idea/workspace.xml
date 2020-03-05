@@ -2,26 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcc1aec2-f4fe-4045-b180-3c93d1b597cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules/test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/test.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/test.test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/Controller/SchedulerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/main/java/Controller/SchedulerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/models/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/main/java/models/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/models/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/main/java/models/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/models/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/main/java/models/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/ConnectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/main/java/service/ConnectionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/GetProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/main/java/service/GetProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/GetTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/main/java/service/GetTaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/PutTaskInCalendarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/main/java/service/PutTaskInCalendarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/SchedulerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/main/java/service/SchedulerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/test/main/java/models/ConstantTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/test/java/models/ConstantTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/test/main/java/models/TaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/test/java/models/TaskTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/test/main/java/service/SchedulerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/test/java/service/SchedulerServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/settings.gradle" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +30,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/ketanDeleteThis">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -104,11 +92,11 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/DeleteThis922/src/main/resources" />
+      <recent name="$PROJECT_DIR$/DeleteThis922/src/main" />
       <recent name="$PROJECT_DIR$/dataFetchModule" />
       <recent name="$PROJECT_DIR$/dataFetchModule/test/main" />
       <recent name="$PROJECT_DIR$/dataFetchModule/test" />
-      <recent name="$PROJECT_DIR$/testModule/src/test/java/models" />
-      <recent name="$PROJECT_DIR$/testModule/src/test/java" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -295,11 +283,6 @@
           <url>file://$PROJECT_DIR$/src/main.java</url>
           <line>95</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/DeleteThis922/src/main/java/Controller/SchedulerController.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/DeleteThis922/src/main/java/service/SchedulerService.java</url>
