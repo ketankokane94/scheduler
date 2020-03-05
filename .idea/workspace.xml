@@ -2,16 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcc1aec2-f4fe-4045-b180-3c93d1b597cc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules/test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/test.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/test.test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/Controller/SchedulerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/src/main/java/Controller/SchedulerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/GetProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/GetProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/GetTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/GetTaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/PutTaskInCalendarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/PutTaskInCalendarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/SchedulerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/SchedulerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/test/java/models/ConstantTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/test/main/java/models/ConstantTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/test/java/models/TaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/test/main/java/models/TaskTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/test/java/service/SchedulerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/test/main/java/service/SchedulerServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/Controller/SchedulerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/main/java/Controller/SchedulerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/models/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/main/java/models/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/models/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/main/java/models/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/models/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/main/java/models/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/ConnectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/main/java/service/ConnectionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/GetProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/main/java/service/GetProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/GetTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/main/java/service/GetTaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/PutTaskInCalendarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/main/java/service/PutTaskInCalendarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/SchedulerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/main/java/service/SchedulerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/test/main/java/models/ConstantTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/test/java/models/ConstantTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/test/main/java/models/TaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/test/java/models/TaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/test/main/java/service/SchedulerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteThis922/src/test/java/service/SchedulerServiceTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +35,9 @@
     </SUITE>
   </component>
   <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/DeleteThis922">
+      <ProjectState />
+    </projectState>
     <projectState path="$PROJECT_DIR$/testModule">
       <ProjectState />
     </projectState>
@@ -84,15 +97,18 @@
       <recent name="models" />
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dataFetchModule" />
       <recent name="$PROJECT_DIR$/dataFetchModule/test/main" />
       <recent name="$PROJECT_DIR$/dataFetchModule/test" />
       <recent name="$PROJECT_DIR$/testModule/src/test/java/models" />
       <recent name="$PROJECT_DIR$/testModule/src/test/java" />
-      <recent name="$PROJECT_DIR$/testModule/src/test/java/models/java" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -107,13 +123,106 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SchedulerController">
+  <component name="RunManager" selected="Application.SchedulerController (1)">
+    <configuration name="SchedulerController (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Controller.SchedulerController" />
+      <module name="test.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SchedulerController" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="java.Controller.SchedulerController" />
+      <option name="MAIN_CLASS_NAME" value="Controller.SchedulerController" />
       <module name="scheduler" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="ConstantTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/DeleteThis922" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;models.ConstantTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="SchedulerServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/DeleteThis922" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;service.SchedulerServiceTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="SchedulerServiceTest.getIntervalsToSchedule" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/DeleteThis922" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;service.SchedulerServiceTest.getIntervalsToSchedule&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TaskTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/DeleteThis922" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;models.TaskTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="/Users/ketan/Documents/GitHub/Scheduler/scheduler/dataFetchModule" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
       <ExternalSystemSettings>
@@ -135,7 +244,21 @@
     <list>
       <item itemvalue="Gradle./Users/ketan/Documents/GitHub/Scheduler/scheduler/dataFetchModule" />
       <item itemvalue="Application.SchedulerController" />
+      <item itemvalue="Gradle.SchedulerServiceTest.getIntervalsToSchedule" />
+      <item itemvalue="Gradle.SchedulerServiceTest" />
+      <item itemvalue="Gradle.TaskTest" />
+      <item itemvalue="Gradle.ConstantTest" />
+      <item itemvalue="Application.SchedulerController (1)" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SchedulerController (1)" />
+        <item itemvalue="Gradle.ConstantTest" />
+        <item itemvalue="Gradle.TaskTest" />
+        <item itemvalue="Gradle.SchedulerServiceTest" />
+        <item itemvalue="Gradle.SchedulerServiceTest.getIntervalsToSchedule" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -146,38 +269,6 @@
       <updated>1563419436429</updated>
     </task>
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="SchedulerTest_getIntervalsToSchedule - 2019.07.19 at 17h 07m 35s.xml">
-      <configuration name="SchedulerTest.getIntervalsToSchedule" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SchedulerTest_run - 2019.07.19 at 17h 08m 00s.xml">
-      <configuration name="SchedulerTest.run" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SchedulerTest_run - 2019.07.19 at 17h 08m 26s.xml">
-      <configuration name="SchedulerTest.run" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TaskTest - 2019.07.19 at 17h 34m 29s.xml">
-      <configuration name="TaskTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConstantTest_TOMORROW - 2019.07.19 at 19h 12m 34s.xml">
-      <configuration name="ConstantTest.TOMORROW" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConstantTest_TOMORROWPLUSONE - 2019.07.19 at 19h 12m 56s.xml">
-      <configuration name="ConstantTest.TOMORROWPLUSONE" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConstantTest_TOMORROWPLUSONE - 2019.07.19 at 19h 13m 17s.xml">
-      <configuration name="ConstantTest.TOMORROWPLUSONE" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConstantTest - 2019.07.19 at 19h 13m 33s.xml">
-      <configuration name="ConstantTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConstantTest - 2019.07.19 at 19h 15m 10s.xml">
-      <configuration name="ConstantTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConstantTest - 2019.07.19 at 19h 15m 21s.xml">
-      <configuration name="ConstantTest" configurationId="JUnit" />
-    </history-entry>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -206,27 +297,12 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dataFetchModule/test/main/java/service/SchedulerServiceTest.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dataFetchModule/test/main/java/models/TaskTest.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dataFetchModule/test/main/java/service/SchedulerServiceTest.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dataFetchModule/src/main/java/Controller/SchedulerController.java</url>
+          <url>file://$PROJECT_DIR$/DeleteThis922/src/main/java/Controller/SchedulerController.java</url>
           <line>17</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dataFetchModule/src/main/java/service/SchedulerService.java</url>
+          <url>file://$PROJECT_DIR$/DeleteThis922/src/main/java/service/SchedulerService.java</url>
           <line>105</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>

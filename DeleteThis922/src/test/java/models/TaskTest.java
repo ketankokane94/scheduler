@@ -1,4 +1,4 @@
-package java.models;
+package models;
 
 
 import org.joda.time.DateTime;
@@ -9,6 +9,7 @@ import org.joda.time.format.DateTimeFormatter;
 import org.junit.Assert;
 import org.junit.Test;
 
+import models.Task;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

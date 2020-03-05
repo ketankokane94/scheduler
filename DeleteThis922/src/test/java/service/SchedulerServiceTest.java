@@ -1,9 +1,10 @@
-package java.service;
+package service;
 
-import test.java.models.models.Task;
+
 import org.joda.time.DateTime;
+
+import models.Task;
 import org.junit.Test;
-import service.SchedulerService;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,6 +29,6 @@ public class SchedulerServiceTest {
     @Test
     public void run() {
         SchedulerService schedulerService = new SchedulerService();
-        schedulerService.run(null,null,true);
+        schedulerService.run(null, null, true);
     }
 }

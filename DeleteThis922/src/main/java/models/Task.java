@@ -1,4 +1,4 @@
-package java.models;
+package models;
 
 import org.joda.time.DateTime;
 import org.joda.time.Minutes;

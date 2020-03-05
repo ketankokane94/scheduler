@@ -1,12 +1,13 @@
-package java.service;
+package service;
 
 import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.model.Event;
 import com.google.api.services.calendar.model.Events;
+import models.Constant;
 import org.joda.time.DateTime;
 
 import java.io.IOException;
-import java.models.Task;
+import models.Task;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.LinkedList;

@@ -1,4 +1,4 @@
-package java.service;
+package service;
 
 import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.model.Event;
@@ -6,7 +6,9 @@ import com.google.api.services.calendar.model.EventDateTime;
 
 
 import java.io.IOException;
-import java.models.Task;
+
+import models.Constant;
+import models.Task;
 import java.security.GeneralSecurityException;
 import java.util.List;
 
@@ -49,7 +51,7 @@ public class PutTaskInCalendarService {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            System.out.printf("test.java.models.models.Event created: %s\n", event.getHtmlLink());
+            System.out.printf("test.models.models.Event created: %s\n", event.getHtmlLink());
         }
     }
 }

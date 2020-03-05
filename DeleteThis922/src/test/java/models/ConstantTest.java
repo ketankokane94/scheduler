@@ -1,8 +1,8 @@
-package java.models;
+package models;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import models.Constant;
 
 public class ConstantTest {
 
