@@ -1,4 +1,4 @@
-package models;
+package test.java.models;
 
 
 import org.joda.time.DateTime;

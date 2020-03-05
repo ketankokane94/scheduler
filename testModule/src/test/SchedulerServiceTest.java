@@ -1,3 +1,5 @@
+package test;
+
 import models.Task;
 import org.joda.time.DateTime;
 import org.junit.Test;
