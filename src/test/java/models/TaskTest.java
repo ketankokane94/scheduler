@@ -2,14 +2,10 @@ package models;
 
 
 import org.joda.time.DateTime;
-import org.joda.time.*;
-
 import org.joda.time.Minutes;
-import org.joda.time.format.DateTimeFormatter;
 import org.junit.Assert;
 import org.junit.Test;
 
-import models.Task;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
