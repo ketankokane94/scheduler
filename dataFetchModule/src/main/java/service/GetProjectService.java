@@ -1,7 +1,8 @@
 package java.service;
 
-import test.java.models.models.Project;
 
+
+import java.models.Project;
 import java.util.ArrayList;
 import java.util.List;
 

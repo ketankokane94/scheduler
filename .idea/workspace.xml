@@ -3,20 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="fcc1aec2-f4fe-4045-b180-3c93d1b597cc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/Controller/SchedulerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/src/main/java/Controller/SchedulerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/GetProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/GetProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/GetTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/GetTaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/PutTaskInCalendarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/PutTaskInCalendarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/SchedulerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/src/main/java/service/SchedulerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/test/java/models/ConstantTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/test/main/java/models/ConstantTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/test/java/models/TaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/test/main/java/models/TaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataFetchModule/src/test/java/service/SchedulerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dataFetchModule/test/main/java/service/SchedulerServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scheduler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModule/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/testModule/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModule/src/main/java/Controller/SchedulerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModule/src/main/java/Controller/SchedulerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModule/src/main/java/models/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModule/src/main/java/models/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModule/src/main/java/models/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModule/src/main/java/models/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModule/src/main/java/models/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModule/src/main/java/models/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModule/src/main/java/service/ConnectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModule/src/main/java/service/ConnectionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModule/src/main/java/service/GetProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModule/src/main/java/service/GetProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModule/src/main/java/service/GetTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModule/src/main/java/service/GetTaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModule/src/main/java/service/PutTaskInCalendarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModule/src/main/java/service/PutTaskInCalendarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModule/src/main/java/service/SchedulerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModule/src/main/java/service/SchedulerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModule/src/test/SchedulerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModule/src/test/java/service/SchedulerServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModule/src/test/java/models/ConstantTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModule/src/test/java/models/ConstantTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModule/src/test/java/models/TaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModule/src/test/java/models/TaskTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,6 +71,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="external.system.task.project.file.to.start" value="$PROJECT_DIR$/dataFetchModule" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -92,10 +88,11 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dataFetchModule/test/main" />
+      <recent name="$PROJECT_DIR$/dataFetchModule/test" />
       <recent name="$PROJECT_DIR$/testModule/src/test/java/models" />
       <recent name="$PROJECT_DIR$/testModule/src/test/java" />
       <recent name="$PROJECT_DIR$/testModule/src/test/java/models/java" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -111,97 +108,34 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.SchedulerController">
-    <configuration name="SchedulerController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Controller.SchedulerController" />
-      <module name="testModule_main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration name="SchedulerController" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="java.Controller.SchedulerController" />
+      <module name="scheduler" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConstantTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="testModule_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.java.models.java.models.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="models" />
-      <option name="MAIN_CLASS_NAME" value="models.ConstantTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConstantTest.TOMORROW" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="testModule_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.java.models.java.models.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="models" />
-      <option name="MAIN_CLASS_NAME" value="models.ConstantTest" />
-      <option name="METHOD_NAME" value="TOMORROW" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConstantTest.TOMORROWPLUSONE" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="testModule_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.java.models.java.models.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="models" />
-      <option name="MAIN_CLASS_NAME" value="models.ConstantTest" />
-      <option name="METHOD_NAME" value="TOMORROWPLUSONE" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TaskTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="testModule_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.java.models.java.models.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="models" />
-      <option name="MAIN_CLASS_NAME" value="models.TaskTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="/Users/ketan/Documents/GitHub/Scheduler/scheduler/dataFetchModule" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/dataFetchModule" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Gradle./Users/ketan/Documents/GitHub/Scheduler/scheduler/dataFetchModule" />
       <item itemvalue="Application.SchedulerController" />
-      <item itemvalue="JUnit.TaskTest" />
-      <item itemvalue="JUnit.ConstantTest.TOMORROW" />
-      <item itemvalue="JUnit.ConstantTest.TOMORROWPLUSONE" />
-      <item itemvalue="JUnit.ConstantTest" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.SchedulerController" />
-        <item itemvalue="JUnit.ConstantTest" />
-        <item itemvalue="JUnit.ConstantTest.TOMORROWPLUSONE" />
-        <item itemvalue="JUnit.ConstantTest.TOMORROW" />
-        <item itemvalue="JUnit.TaskTest" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -272,27 +206,27 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/testModule/src/test/java/service/SchedulerServiceTest.java</url>
+          <url>file://$PROJECT_DIR$/dataFetchModule/test/main/java/service/SchedulerServiceTest.java</url>
           <line>23</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/testModule/src/test/java/models/TaskTest.java</url>
+          <url>file://$PROJECT_DIR$/dataFetchModule/test/main/java/models/TaskTest.java</url>
           <line>23</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/testModule/src/test/java/service/SchedulerServiceTest.java</url>
+          <url>file://$PROJECT_DIR$/dataFetchModule/test/main/java/service/SchedulerServiceTest.java</url>
           <line>29</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/testModule/src/main/java/Controller/SchedulerController.java</url>
+          <url>file://$PROJECT_DIR$/dataFetchModule/src/main/java/Controller/SchedulerController.java</url>
           <line>17</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/testModule/src/main/java/service/SchedulerService.java</url>
+          <url>file://$PROJECT_DIR$/dataFetchModule/src/main/java/service/SchedulerService.java</url>
           <line>105</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>

@@ -3,10 +3,10 @@ package java.service;
 import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.model.Event;
 import com.google.api.services.calendar.model.EventDateTime;
-import test.java.models.models.Constant;
-import test.java.models.models.Task;
+
 
 import java.io.IOException;
+import java.models.Task;
 import java.security.GeneralSecurityException;
 import java.util.List;
 
