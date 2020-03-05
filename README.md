@@ -1,3 +1,5 @@
+![Java CI with Gradle](https://github.com/ketankokane94/scheduler/workflows/Java%20CI%20with%20Gradle/badge.svg)
+
 # schedulerService
 automatic schedulerService
 
