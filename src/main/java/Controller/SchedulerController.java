@@ -1,14 +1,13 @@
 package Controller;
 
+import java.io.IOException;
 import models.Project;
 import models.Task;
+import java.security.GeneralSecurityException;
 import service.GetProjectService;
 import service.GetTaskService;
 import service.PutTaskInCalendarService;
 import service.SchedulerService;
-
-import java.io.IOException;
-import java.security.GeneralSecurityException;
 import java.util.List;
 
 public class SchedulerController {

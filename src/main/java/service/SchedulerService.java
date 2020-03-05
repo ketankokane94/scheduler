@@ -1,11 +1,12 @@
 package service;
 
-import models.Constant;
-import models.Project;
-import models.Task;
+
 import org.joda.time.DateTime;
 import org.joda.time.Minutes;
 
+import models.Constant;
+import models.Project;
+import models.Task;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
