@@ -6,18 +6,15 @@ import com.google.api.services.calendar.model.EventDateTime;
 import com.google.api.services.calendar.model.Events;
 import models.Constant;
 import models.Interval;
-import org.joda.time.DateTime;
 
 import java.io.IOException;
-
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 
 public class CalendarService {
 
-    public List<Interval> pullTasks(Calendar calendarAppService) {
+    public List<Interval> pullIntervals(Calendar calendarAppService) {
 
         if (calendarAppService == null) {
             return new ArrayList<>();
@@ -42,6 +39,9 @@ public class CalendarService {
 
     private List<Interval> convertGoogleCalendarEventsToTasks(List<Event> items) {
         List<Interval> intervals = new ArrayList<>();
+        if (items == null)
+            return intervals;
+
         for (Event event : items) {
             Interval interval = new Interval(event.getSummary(),
                     Constant.convertToDateTime(event.getStart()),
@@ -80,24 +80,5 @@ public class CalendarService {
         }
     }
 
-    public List<Interval> getTask() {
-        String today_date = "2019-07-20T";
-        List<Interval> intervals = new LinkedList<>();
-        intervals.add(new Interval("Sleep",
-                DateTime.parse(today_date + "00:00:00"),
-                DateTime.parse(today_date + "09:40:00")));
-
-        intervals.add(new Interval("Lunch", DateTime.parse(today_date + "13:00:00"),
-                DateTime.parse(today_date + "13:45:00")));
-
-        intervals.add(new Interval("Dinner", DateTime.parse(today_date + "20:30:00"),
-                DateTime.parse(today_date + "21:00:00")));
-
-        intervals.add(new Interval("Gym", DateTime.parse(today_date + "16:30:00"),
-                DateTime.parse(today_date + "17:00:00")));
-
-
-        return intervals;
-    }
 
 }

@@ -47,5 +47,12 @@ public class Project {
         this.name = name;
     }
 
-
+    @Override
+    public String toString() {
+        return "Project{" +
+                "completedTime=" + completedTime +
+                ", required_minutes=" + required_minutes +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

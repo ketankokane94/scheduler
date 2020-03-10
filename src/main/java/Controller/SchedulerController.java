@@ -19,18 +19,19 @@ import java.util.List;
 public class SchedulerController {
     public static void main(String[] args) throws IOException, GeneralSecurityException {
         ConnectionService connectionService = new ConnectionService();
-        CalendarService taskService = new CalendarService();
-        TasksService projectService = new TasksService();
+        CalendarService calendarService = new CalendarService();
+        TasksService tasksService = new TasksService();
 
         Calendar calendarApp = connectionService.getCalendarApp();
         Tasks tasksApp = connectionService.getTaskApp();
 
-        final List<Interval> intervals = taskService.pullTasks(calendarApp);
-        final List<Project> projects = projectService.pullTasks(tasksApp);
+        final List<Interval> intervals = calendarService.pullIntervals(calendarApp);
+        final List<Project> projects = tasksService.pullTasks(tasksApp);
 
 
-        final List<Interval> eventList = new SchedulerService().run(intervals,projects, true);
-        taskService.pushTasks(eventList, calendarApp);
+        final List<Interval> eventList = new SchedulerService().run(intervals, projects, true);
+        System.out.println(eventList);
+        calendarService.pushTasks(eventList, calendarApp);
     }
 
 }
