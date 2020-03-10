@@ -1,6 +1,7 @@
 package service;
 
 import models.Constant;
+import models.Project;
 import models.Task;
 import org.joda.time.DateTime;
 import org.junit.Assert;
@@ -8,7 +9,6 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.PriorityQueue;
 
 public class SchedulerServiceTest {
 
@@ -50,7 +50,7 @@ public class SchedulerServiceTest {
         final List<Task> freeIntervals = new ArrayList<>();
         freeIntervals.add(freeInterval);
         Assert.assertNotNull(freeIntervals);
-        final PriorityQueue<Task> tasks = SchedulerService.splitIntervals(freeIntervals);
+        final List<Task> tasks = SchedulerService.splitIntervals(freeIntervals);
         Assert.assertNotNull(tasks);
         Assert.assertEquals(1, tasks.size());
 
@@ -66,12 +66,71 @@ public class SchedulerServiceTest {
         final List<Task> freeIntervals = new ArrayList<>();
         freeIntervals.add(freeInterval);
         Assert.assertNotNull(freeIntervals);
-        final PriorityQueue<Task> tasks = SchedulerService.splitIntervals(freeIntervals);
+        final List<Task> tasks = SchedulerService.splitIntervals(freeIntervals);
         Assert.assertNotNull(tasks);
         Assert.assertEquals(2, tasks.size());
 
     }
 
+    @Test
+    public void ScheduleShoyldReturnEmptyListWhenThereAreNoProjects() {
+        final DateTime JanFirst4PM = new DateTime(2020, 01, 01, 15, 0);
+        final DateTime plusMinutes = JanFirst4PM.plusMinutes(Constant.max_interval + Constant.min_interval);
+        final List<Project> projects  = new ArrayList<>();
+        Task freeInterval = new Task(Constant.FREE_INTERVAL_NAME, JanFirst4PM, plusMinutes);
+        final List<Task> freeIntervals = new ArrayList<>();
+        freeIntervals.add(freeInterval);
+        final List<Task> schedule = SchedulerService.schedule(projects, freeIntervals);
+        Assert.assertNotNull(schedule);
+    }
+
+    @Test
+    public void ScheduleShoyldReturnEmptyListWhenThereAreNoFreeIntervals() {
+        final List<Project> projects  = new ArrayList<>();
+        final List<Task> freeIntervals = new ArrayList<>();
+        final List<Task> schedule = SchedulerService.schedule(projects, freeIntervals);
+        Assert.assertNotNull(schedule);
+    }
+
+    @Test
+    public void ScheduleShouldReturnAssignedIntervalWithProjectWhenTaskDurationIsLessThanProjectRemaininTime() {
+        final DateTime JanFirst4PM = new DateTime(2020, 01, 01, 15, 0);
+        final DateTime plusMinutes = JanFirst4PM.plusMinutes(Constant.min_interval);
+
+        Task freeInterval = new Task(Constant.FREE_INTERVAL_NAME, JanFirst4PM, plusMinutes);
+        final List<Task> freeIntervals = new ArrayList<>();
+        freeIntervals.add(freeInterval);
+
+        final List<Project> projects  = new ArrayList<>();
+        Project project = new Project("Read on OOP", 0, 16 * 60);
+        projects.add(project);
+
+
+        final List<Task> schedule = SchedulerService.schedule(projects, freeIntervals);
+        Assert.assertNotNull(schedule);
+        Assert.assertEquals(1, schedule.size());
+        Assert.assertEquals(1, projects.size());
+        Assert.assertEquals(0, freeIntervals.size());
+    }
+
+    @Test
+    public void ScheduleShouldReturnAssignedIntervalWithProjectWhenTaskDurationIsMoreThanProjectRemaininTime() {
+        final DateTime JanFirst4PM = new DateTime(2020, 01, 01, 15, 0);
+        final DateTime plusMinutes = JanFirst4PM.plusMinutes(Constant.max_interval);
+
+        Task freeInterval = new Task(Constant.FREE_INTERVAL_NAME, JanFirst4PM, plusMinutes);
+        final List<Task> freeIntervals = new ArrayList<>();
+        freeIntervals.add(freeInterval);
+
+        final List<Project> projects  = new ArrayList<>();
+        Project project = new Project("Read on OOP", 0, Constant.min_interval);
+        projects.add(project);
+
+        final List<Task> schedule = SchedulerService.schedule(projects, freeIntervals);
+        Assert.assertNotNull(schedule);
+        Assert.assertEquals(1, schedule.size());
+        Assert.assertEquals(0, projects.size());
+    }
 
     @Test
     public void run() {

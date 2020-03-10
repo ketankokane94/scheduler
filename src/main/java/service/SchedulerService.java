@@ -6,10 +6,7 @@ import models.Task;
 import org.joda.time.DateTime;
 import org.joda.time.Minutes;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class SchedulerService {
 
@@ -22,29 +19,27 @@ public class SchedulerService {
         }
     }
 
-    public static void mergeTasks(List<Task> assignedInterval, List<Task> thinsgToDo) {
-        for (Task thingToDo : thinsgToDo) {
-            assignedInterval.add(new Task(thingToDo.getSummary(), thingToDo.getStart(), thingToDo.getEnd()));
-        }
-        Collections.sort(assignedInterval);
-    }
+//    public static void mergeTasks(List<Task> assignedInterval, List<Task> thinsgToDo) {
+//        for (Task thingToDo : thinsgToDo) {
+//            assignedInterval.add(new Task(thingToDo.getSummary(), thingToDo.getStart(), thingToDo.getEnd()));
+//        }
+//        Collections.sort(assignedInterval);
+//    }
 
-    public static List<Task> schedule(List<Project> projects, PriorityQueue<Task> unassignedTasks) {
+    public static List<Task> schedule(List<Project> projects, List<Task> unassignedTasks) {
         // while something to schedule and any empty intervals remaining r
         List<Task> result = new ArrayList<>();
         int index = 0;
+
         while (!projects.isEmpty() && !unassignedTasks.isEmpty()) {
             // check if the project can be completed assigned ??
-            Task task = unassignedTasks.poll();
+            Task task = unassignedTasks.remove(0);
             if (task.getDuration() >= projects.get(index).getRequired_minutes()) {
                 // means can be assigned and project can be removed and new interval can be created
                 task.setSummary(projects.get(index).getName());
                 task.setEnd(task.getStart().plusMinutes(projects.get(index).getRequired_minutes()));
                 result.add(task);
                 projects.remove(index);
-
-//            if(item.intervalLength > 30)
-                //  unassignedTasks.add(new Task("NA", task.to, end));
             } else {
                 task.setSummary(projects.get(index).getName());
                 result.add(task);
@@ -57,9 +52,19 @@ public class SchedulerService {
         return result;
     }
 
-    public static PriorityQueue<Task> splitIntervals(List<Task> freeIntervals) {
+    /**
+     *
+     * @param freeIntervals iin sorted order
+     * @return
+     */
+    public static List<Task> splitIntervals(List<Task> freeIntervals) {
         // Comparator to compare two tasks based on Length of Duration
-        PriorityQueue<Task> result = new PriorityQueue<>((o1, o2) -> o2.getDuration() - o1.getDuration());
+
+        Comparator<Task> comparator = (o1, o2) -> {
+            return o2.getDuration() - o1.getDuration();
+        };
+
+        List<Task> result = new ArrayList<>();
 
         for (Task interval : freeIntervals) {
             DateTime newStartDateTime;
@@ -80,6 +85,7 @@ public class SchedulerService {
             if (interval.getDuration() > 30)
                 result.add(interval);
         }
+        Collections.sort(result, comparator);
         return result;
     }
 
