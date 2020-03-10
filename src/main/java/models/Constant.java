@@ -7,6 +7,9 @@ import org.joda.time.DateTime;
 
 public class Constant {
 
+    public static final String CALENDAR_TO_ACCESS_PRIMARY = "primary";
+    public static final String START_TIME = "startTime";
+
     public  static int min_interval = 55;
     public  static int max_interval = 120;
     public  static String FREE_INTERVAL_NAME = "Free Interval";
