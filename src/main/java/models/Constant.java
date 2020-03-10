@@ -9,6 +9,7 @@ public class Constant {
 
     public  static int min_interval = 55;
     public  static int max_interval = 120;
+    public  static String FREE_INTERVAL_NAME = "Free Interval";
 
 
     // get Tomorrow's date

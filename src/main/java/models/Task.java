@@ -4,7 +4,7 @@ import org.joda.time.DateTime;
 import org.joda.time.Minutes;
 
 
-public class Task implements Comparable {
+public class Task implements Comparable<Task> {
 
     private String summary;
     private int duration;
@@ -60,9 +60,9 @@ public class Task implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        Task task = (Task) (o);
-        return start.compareTo(task.start);
+    public int compareTo(Task otherTask) {
+        // compare based on the start time
+        return start.compareTo(otherTask.start);
     }
 
     @Override

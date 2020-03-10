@@ -1,12 +1,11 @@
 package service;
 
-
-import org.joda.time.DateTime;
-import org.joda.time.Minutes;
-
 import models.Constant;
 import models.Project;
 import models.Task;
+import org.joda.time.DateTime;
+import org.joda.time.Minutes;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -14,7 +13,7 @@ import java.util.PriorityQueue;
 
 public class SchedulerService {
 
-    private static void printToConsole(List<Project> projects, List<Task> assignedInterval) {
+    public static void printToConsole(List<Project> projects, List<Task> assignedInterval) {
         for (Task item : assignedInterval)
             System.out.println(item);
 
@@ -23,14 +22,14 @@ public class SchedulerService {
         }
     }
 
-    private static void mergeTasks(List<Task> assignedInterval, List<Task> thinsgToDo) {
+    public static void mergeTasks(List<Task> assignedInterval, List<Task> thinsgToDo) {
         for (Task thingToDo : thinsgToDo) {
             assignedInterval.add(new Task(thingToDo.getSummary(), thingToDo.getStart(), thingToDo.getEnd()));
         }
         Collections.sort(assignedInterval);
     }
 
-    private static List<Task> schedule(List<Project> projects, PriorityQueue<Task> unassignedTasks) {
+    public static List<Task> schedule(List<Project> projects, PriorityQueue<Task> unassignedTasks) {
         // while something to schedule and any empty intervals remaining r
         List<Task> result = new ArrayList<>();
         int index = 0;
@@ -45,7 +44,7 @@ public class SchedulerService {
                 projects.remove(index);
 
 //            if(item.intervalLength > 30)
-              //  unassignedTasks.add(new Task("NA", task.to, end));
+                //  unassignedTasks.add(new Task("NA", task.to, end));
             } else {
                 task.setSummary(projects.get(index).getName());
                 result.add(task);
@@ -58,58 +57,61 @@ public class SchedulerService {
         return result;
     }
 
-    private static PriorityQueue<Task> splitIntevals(List<Task> unAssignedTasks) {
-
+    public static PriorityQueue<Task> splitIntervals(List<Task> freeIntervals) {
+        // Comparator to compare two tasks based on Length of Duration
         PriorityQueue<Task> result = new PriorityQueue<>((o1, o2) -> o2.getDuration() - o1.getDuration());
-        for (Task task : unAssignedTasks) {
 
+        for (Task interval : freeIntervals) {
             DateTime newStartDateTime;
-
-            if (task.getDuration() > Constant.max_interval) {
+            if (interval.getDuration() > Constant.max_interval) {
                 int i = 0;
                 do {
-                    newStartDateTime = task.getStart().plusMinutes(i);
-                    result.add(new Task("",
+                    newStartDateTime = interval.getStart().plusMinutes(i);
+                    result.add(new Task(Constant.FREE_INTERVAL_NAME,
                             newStartDateTime,
                             newStartDateTime.plusMinutes(Constant.max_interval - 15)));
-                    task.setDuration(task.getDuration() - Constant.max_interval);
+                    interval.setDuration(interval.getDuration() - Constant.max_interval);
                     i += Constant.max_interval;
                 }
-                while (task.getDuration() > Constant.max_interval);
-                task.setStart(task.getStart().plusMinutes(i));
-                task.setEnd(task.getStart().plusMinutes(task.getDuration()));
+                while (interval.getDuration() > Constant.max_interval);
+                interval.setStart(interval.getStart().plusMinutes(i));
+                interval.setEnd(interval.getStart().plusMinutes(interval.getDuration()));
             }
-            if (task.getDuration() > 30)
-                result.add(task);
+            if (interval.getDuration() > 30)
+                result.add(interval);
         }
         return result;
     }
 
-    public static PriorityQueue<Task> getIntervalsToSchedule(List<Task> assignedTask) {
-        List<Task> unAssignedTask = new ArrayList<>();
+    /**
+     * @param assignedTask
+     * @return
+     */
+    public static List<Task> getFreeIntervals(List<Task> assignedTask) {
+        List<Task> freeIntervalsList = new ArrayList<>();
         for (int i = 1; i < assignedTask.size(); i++) {
             Task prev = assignedTask.get(i - 1);
             Task curr = assignedTask.get(i);
+            // find the minutes between two intervals, this is why the tasks should be sorted
             int interval = Minutes.minutesBetween(prev.getEnd(), curr.getStart()).getMinutes();
             if (interval >= Constant.min_interval) {
-                unAssignedTask.add(new Task("", prev.getEnd().plusMinutes(10), curr.getStart().minusMinutes(10)));
+                freeIntervalsList.add(new Task(Constant.FREE_INTERVAL_NAME, prev.getEnd().plusMinutes(10), curr.getStart().minusMinutes(10)));
             }
         }
-        return splitIntevals(unAssignedTask);
-
+        return freeIntervalsList;
     }
 
-    public List<Task> run(List<Task> tasks, List<Project> projects, boolean verbose) {
-
-        Collections.sort(tasks);
-        PriorityQueue<Task> unassignedInterval = getIntervalsToSchedule(tasks);
-        List<Task> assignedInterval = schedule(projects, unassignedInterval);
-        printToConsole(projects, assignedInterval);
-//        if (verbose){
-//            mergeTasks(assignedInterval, tasks);
-//            printToConsole(projects, assignedInterval);
-//        }
-        return assignedInterval;
-    }
+//    public List<Task> run(List<Task> tasks, List<Project> projects, boolean verbose) {
+//
+//        Collections.sort(tasks);
+//        PriorityQueue<Task> unassignedInterval = getFreeIntervals(tasks);
+//        List<Task> assignedInterval = schedule(projects, unassignedInterval);
+//        printToConsole(projects, assignedInterval);
+////        if (verbose){
+////            mergeTasks(assignedInterval, tasks);
+////            printToConsole(projects, assignedInterval);
+////        }
+//        return assignedInterval;
+//    }
 
 }
