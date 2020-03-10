@@ -7,11 +7,10 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
 import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.json.JsonFactory;
-import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.CalendarScopes;
+import models.Constant;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -23,8 +22,6 @@ import java.util.List;
 
 public class ConnectionService {
 
-    private static final String APPLICATION_NAME = "Schedule Maker by Ketan";
-    private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
     private static final String TOKENS_DIRECTORY_PATH = "tokens";
 
     /**
@@ -42,11 +39,11 @@ public class ConnectionService {
         if (in == null) {
             throw new FileNotFoundException("Resource not found: " + CREDENTIALS_FILE_PATH);
         }
-        GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
+        GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(Constant.JSON_FACTORY, new InputStreamReader(in));
 
         // Build flow and trigger user authorization request.
         GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
-                HTTP_TRANSPORT, JSON_FACTORY, clientSecrets, SCOPES)
+                HTTP_TRANSPORT, Constant.JSON_FACTORY, clientSecrets, SCOPES)
                 .setDataStoreFactory(new FileDataStoreFactory(new java.io.File(TOKENS_DIRECTORY_PATH)))
                 .setAccessType("offline")
                 .build();
@@ -56,8 +53,15 @@ public class ConnectionService {
 
     public Calendar getCalendar() throws GeneralSecurityException, IOException {
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-        return new Calendar.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
-                .setApplicationName(APPLICATION_NAME)
+        return new Calendar.Builder(HTTP_TRANSPORT, Constant.JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
+                .setApplicationName(Constant.APPLICATION_NAME)
                 .build();
     }
+
+//    public Calendar getProjects() throws GeneralSecurityException, IOException {
+//        final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+//        return new Calendar.Builder(HTTP_TRANSPORT, Constant.JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
+//                .setApplicationName(Constant.APPLICATION_NAME)
+//                .build();
+//    }
 }

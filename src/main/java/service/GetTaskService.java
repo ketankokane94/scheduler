@@ -21,6 +21,10 @@ public class GetTaskService {
 
     public List<Task> pullTasks(Calendar calendarService) {
 
+        if(calendarService == null){
+            return new ArrayList<>();
+        }
+
         Events events = null;
         try {
             events = calendarService.events().list(Constant.CALENDAR_TO_ACCESS_PRIMARY).
