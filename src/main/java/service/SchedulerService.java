@@ -94,8 +94,9 @@ public class SchedulerService {
         Collections.sort(intervals); //sort them based on their start time
         // get gaps in the already assigned Intervals
         List<Interval> unassignedIntervals = getFreeIntervals(intervals);
+        List<Interval> freeIntervals = splitIntervals(unassignedIntervals);
         // fill the gaps with the projects
-        List<Interval> assignedIntervals = schedule(projects, unassignedIntervals);
+        List<Interval> assignedIntervals = schedule(projects, freeIntervals);
         return assignedIntervals;
     }
 
