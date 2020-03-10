@@ -3,10 +3,10 @@ package service;
 
 import org.junit.Test;
 
-class GetTaskServiceTest {
+public class GetTaskServiceTest {
 
     @Test
-    void pullFromCalendar() {
+    public void pullFromCalendar() {
 
     }
 }
