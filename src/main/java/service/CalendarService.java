@@ -15,17 +15,17 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-public class GetTaskService {
+public class CalendarService {
 
-    public List<Interval> pullTasks(Calendar calendarService) {
+    public List<Interval> pullTasks(Calendar calendarAppService) {
 
-        if (calendarService == null) {
+        if (calendarAppService == null) {
             return new ArrayList<>();
         }
 
         Events events = null;
         try {
-            events = calendarService.events().list(Constant.CALENDAR_TO_ACCESS_PRIMARY).
+            events = calendarAppService.events().list(Constant.CALENDAR_TO_ACCESS_PRIMARY).
                     setTimeMin(Constant.TOMORROW())
                     .setTimeMax(Constant.TOMORROWPLUSONE())
                     .setOrderBy(Constant.START_TIME)

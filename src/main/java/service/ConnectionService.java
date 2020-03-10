@@ -10,6 +10,7 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.CalendarScopes;
+import com.google.api.services.tasks.Tasks;
 import models.Constant;
 
 import java.io.FileNotFoundException;
@@ -51,17 +52,17 @@ public class ConnectionService {
         return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
     }
 
-    public Calendar getCalendar() throws GeneralSecurityException, IOException {
+    public Calendar getCalendarApp() throws GeneralSecurityException, IOException {
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
         return new Calendar.Builder(HTTP_TRANSPORT, Constant.JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
                 .setApplicationName(Constant.APPLICATION_NAME)
                 .build();
     }
 
-//    public Calendar getProjects() throws GeneralSecurityException, IOException {
-//        final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-//        return new Tasks.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
-//                .setApplicationName(APPLICATION_NAME)
-//                .build();
-//    }
+    public Tasks getTaskApp() throws GeneralSecurityException, IOException {
+        final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+        return new Tasks.Builder(HTTP_TRANSPORT, Constant.JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
+                .setApplicationName(Constant.APPLICATION_NAME)
+                .build();
+    }
 }

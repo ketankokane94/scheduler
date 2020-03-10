@@ -28,7 +28,6 @@ public class Project {
      * @param completedTime
      */
     public void setCompletedTime(int completedTime) {
-
         this.completedTime = completedTime;
     }
 
