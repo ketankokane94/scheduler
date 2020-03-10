@@ -3,8 +3,9 @@ package Controller;
 import java.io.IOException;
 
 import com.google.api.services.calendar.Calendar;
+import models.Interval;
 import models.Project;
-import models.Task;
+
 import java.security.GeneralSecurityException;
 
 import service.ConnectionService;
@@ -22,11 +23,11 @@ public class SchedulerController {
 
         Calendar calendar = connectionService.getCalendar();
 
-        final List<Task> tasks = taskService.pullTasks(calendar);
+        final List<Interval> intervals = taskService.pullTasks(calendar);
         final List<Project> projects = projectService.getProjects();
 
 
-        final List<Task> eventList = new SchedulerService().run(tasks,projects, true);
+        final List<Interval> eventList = new SchedulerService().run(intervals,projects, true);
         taskService.pushTasks(eventList, calendar);
     }
 

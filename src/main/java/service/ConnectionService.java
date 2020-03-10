@@ -60,8 +60,8 @@ public class ConnectionService {
 
 //    public Calendar getProjects() throws GeneralSecurityException, IOException {
 //        final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-//        return new Calendar.Builder(HTTP_TRANSPORT, Constant.JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
-//                .setApplicationName(Constant.APPLICATION_NAME)
+//        return new Tasks.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
+//                .setApplicationName(APPLICATION_NAME)
 //                .build();
 //    }
 }

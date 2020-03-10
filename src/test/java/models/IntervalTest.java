@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class TaskTest {
+public class IntervalTest {
 
     DateTime now = DateTime.parse("2019-07-19T09:40:00");
     DateTime later = DateTime.parse("2019-07-19T10:40:00");
@@ -23,21 +23,21 @@ public class TaskTest {
 
     @Test
     public void checkIfSorts() {
-        Task early = new Task("tes", now, later);
-        Task late = new Task("tes", later, now);
-        List<Task> tasks = new ArrayList<>();
-        tasks.add(late);
-        tasks.add(early);
-        Collections.sort(tasks);
+        Interval early = new Interval("tes", now, later);
+        Interval late = new Interval("tes", later, now);
+        List<Interval> intervals = new ArrayList<>();
+        intervals.add(late);
+        intervals.add(early);
+        Collections.sort(intervals);
 
-        Assert.assertEquals(tasks.get(0), early);
-        Assert.assertEquals(tasks.get(1), late);
+        Assert.assertEquals(intervals.get(0), early);
+        Assert.assertEquals(intervals.get(1), late);
     }
 
     @Test
     public void compareTo() {
-        Task early = new Task("tes", now, later);
-        Task late = new Task("tes", later, now);
+        Interval early = new Interval("tes", now, later);
+        Interval late = new Interval("tes", later, now);
         // both same
         Assert.assertEquals(0, early.compareTo(early));
         // start is early is less than late

@@ -1,8 +1,8 @@
 package service;
 
 import models.Constant;
+import models.Interval;
 import models.Project;
-import models.Task;
 import org.joda.time.DateTime;
 import org.joda.time.Minutes;
 
@@ -10,24 +10,24 @@ import java.util.*;
 
 public class SchedulerService {
 
-    public static List<Task> schedule(List<Project> projects, List<Task> unassignedTasks) {
+    public static List<Interval> schedule(List<Project> projects, List<Interval> unassignedIntervals) {
         // while something to schedule and any empty intervals remaining r
-        List<Task> result = new ArrayList<>();
+        List<Interval> result = new ArrayList<>();
         int index = 0;
 
-        while (!projects.isEmpty() && !unassignedTasks.isEmpty()) {
+        while (!projects.isEmpty() && !unassignedIntervals.isEmpty()) {
             // check if the project can be completed assigned ??
-            Task task = unassignedTasks.remove(0);
-            if (task.getDuration() >= projects.get(index).getRequired_minutes()) {
+            Interval interval = unassignedIntervals.remove(0);
+            if (interval.getDuration() >= projects.get(index).getRequired_minutes()) {
                 // means can be assigned and project can be removed and new interval can be created
-                task.setSummary(projects.get(index).getName());
-                task.setEnd(task.getStart().plusMinutes(projects.get(index).getRequired_minutes()));
-                result.add(task);
+                interval.setSummary(projects.get(index).getName());
+                interval.setEnd(interval.getStart().plusMinutes(projects.get(index).getRequired_minutes()));
+                result.add(interval);
                 projects.remove(index);
             } else {
-                task.setSummary(projects.get(index).getName());
-                result.add(task);
-                projects.get(index).setRequired_minutes(projects.get(index).getRequired_minutes() - task.getDuration());
+                interval.setSummary(projects.get(index).getName());
+                result.add(interval);
+                projects.get(index).setRequired_minutes(projects.get(index).getRequired_minutes() - interval.getDuration());
             }
 
             if (projects.size() > 0)
@@ -41,20 +41,20 @@ public class SchedulerService {
      * @param freeIntervals iin sorted order
      * @return
      */
-    public static List<Task> splitIntervals(List<Task> freeIntervals) {
+    public static List<Interval> splitIntervals(List<Interval> freeIntervals) {
         // Comparator to compare two tasks based on Length of Duration
 
-        Comparator<Task> comparator = (o1, o2) -> o2.getDuration() - o1.getDuration();
+        Comparator<Interval> comparator = (o1, o2) -> o2.getDuration() - o1.getDuration();
 
-        List<Task> result = new ArrayList<>();
+        List<Interval> result = new ArrayList<>();
 
-        for (Task interval : freeIntervals) {
+        for (Interval interval : freeIntervals) {
             DateTime newStartDateTime;
             if (interval.getDuration() > Constant.max_interval) {
                 int i = 0;
                 do {
                     newStartDateTime = interval.getStart().plusMinutes(i);
-                    result.add(new Task(Constant.FREE_INTERVAL_NAME,
+                    result.add(new Interval(Constant.FREE_INTERVAL_NAME,
                             newStartDateTime,
                             newStartDateTime.plusMinutes(Constant.max_interval - 15)));
                     interval.setDuration(interval.getDuration() - Constant.max_interval);
@@ -72,30 +72,30 @@ public class SchedulerService {
     }
 
     /**
-     * @param assignedTask Need to be sorted, cannot deal with overlapping intervals
+     * @param assignedInterval Need to be sorted, cannot deal with overlapping intervals
      * @return
      */
     // TODO: remove magic number and test case for that
-    public static List<Task> getFreeIntervals(List<Task> assignedTask) {
-        List<Task> freeIntervalsList = new ArrayList<>();
-        for (int i = 1; i < assignedTask.size(); i++) {
-            Task prev = assignedTask.get(i - 1);
-            Task curr = assignedTask.get(i);
+    public static List<Interval> getFreeIntervals(List<Interval> assignedInterval) {
+        List<Interval> freeIntervalsList = new ArrayList<>();
+        for (int i = 1; i < assignedInterval.size(); i++) {
+            Interval prev = assignedInterval.get(i - 1);
+            Interval curr = assignedInterval.get(i);
             // find the minutes between two intervals, this is why the tasks should be sorted
             int interval = Minutes.minutesBetween(prev.getEnd(), curr.getStart()).getMinutes();
             if (interval >= Constant.min_interval) {
-                freeIntervalsList.add(new Task(Constant.FREE_INTERVAL_NAME, prev.getEnd().plusMinutes(10), curr.getStart().minusMinutes(10)));
+                freeIntervalsList.add(new Interval(Constant.FREE_INTERVAL_NAME, prev.getEnd().plusMinutes(10), curr.getStart().minusMinutes(10)));
             }
         }
         return freeIntervalsList;
     }
 
-    public List<Task> run(List<Task> tasks, List<Project> projects, boolean verbose) {
-        Collections.sort(tasks); //sort them based on their start time
+    public List<Interval> run(List<Interval> intervals, List<Project> projects, boolean verbose) {
+        Collections.sort(intervals); //sort them based on their start time
         // get gaps in the already assigned Intervals
-        List<Task> unassignedIntervals = getFreeIntervals(tasks);
+        List<Interval> unassignedIntervals = getFreeIntervals(intervals);
         // fill the gaps with the projects
-        List<Task> assignedIntervals = schedule(projects, unassignedIntervals);
+        List<Interval> assignedIntervals = schedule(projects, unassignedIntervals);
         return assignedIntervals;
     }
 

@@ -4,7 +4,7 @@ import org.joda.time.DateTime;
 import org.joda.time.Minutes;
 
 
-public class Task implements Comparable<Task> {
+public class Interval implements Comparable<Interval> {
 
     private String summary;
     private int duration;
@@ -12,7 +12,7 @@ public class Task implements Comparable<Task> {
     private DateTime start;
     private DateTime end;
 
-    public Task(String summary, DateTime start, DateTime end) {
+    public Interval(String summary, DateTime start, DateTime end) {
         this.summary = summary;
         this.start = start;
         this.end = end;
@@ -60,14 +60,14 @@ public class Task implements Comparable<Task> {
     }
 
     @Override
-    public int compareTo(Task otherTask) {
+    public int compareTo(Interval otherInterval) {
         // compare based on the start time
-        return start.compareTo(otherTask.start);
+        return start.compareTo(otherInterval.start);
     }
 
     @Override
     public String toString() {
-        return "Task{" +
+        return "Interval{" +
                 "summary='" + summary + '\'' +
                 ", duration=" + duration +
                 ", description='" + description + '\'' +

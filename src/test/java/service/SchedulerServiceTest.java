@@ -1,8 +1,8 @@
 package service;
 
 import models.Constant;
+import models.Interval;
 import models.Project;
-import models.Task;
 import org.joda.time.DateTime;
 import org.junit.Assert;
 import org.junit.Test;
@@ -21,20 +21,20 @@ public class SchedulerServiceTest {
         DateTime JanFirst5PM = new DateTime(2020, 01, 01, 17, 0);
         DateTime JanFirst5_50PM = new DateTime(2020, 01, 01, 17, 50);
 
-        Task Gym = new Task("Gym", JanFirst2PM, JanFirst2_50PM);
-        Task Cooking = new Task("Cooking", JanFirst5PM, JanFirst5_50PM);
+        Interval Gym = new Interval("Gym", JanFirst2PM, JanFirst2_50PM);
+        Interval Cooking = new Interval("Cooking", JanFirst5PM, JanFirst5_50PM);
 
-        List<Task> tasks = new ArrayList<>();
-        tasks.add(Gym);
-        tasks.add(Cooking);
+        List<Interval> intervals = new ArrayList<>();
+        intervals.add(Gym);
+        intervals.add(Cooking);
 
-        final List<Task> freeIntervals = SchedulerService.getFreeIntervals(tasks);
+        final List<Interval> freeIntervals = SchedulerService.getFreeIntervals(intervals);
         Assert.assertNotNull(freeIntervals);
         Assert.assertEquals(1, freeIntervals.size());
-        Task task = freeIntervals.get(0);
-        Assert.assertEquals(110, task.getDuration());
+        Interval interval = freeIntervals.get(0);
+        Assert.assertEquals(110, interval.getDuration());
         // 10 minutes break
-        Assert.assertEquals(JanFirst2_50PM.minusMinutes(-10), task.getStart());
+        Assert.assertEquals(JanFirst2_50PM.minusMinutes(-10), interval.getStart());
         Assert.assertEquals(Constant.FREE_INTERVAL_NAME, freeIntervals.get(0).getSummary());
 
     }
@@ -46,13 +46,13 @@ public class SchedulerServiceTest {
 
         DateTime JanFirst4_50PM = JanFirst4PM.plusMinutes(50); // make an interval of 50 minutes.
 
-        Task freeInterval = new Task(Constant.FREE_INTERVAL_NAME, JanFirst4PM, JanFirst4_50PM);
-        final List<Task> freeIntervals = new ArrayList<>();
+        Interval freeInterval = new Interval(Constant.FREE_INTERVAL_NAME, JanFirst4PM, JanFirst4_50PM);
+        final List<Interval> freeIntervals = new ArrayList<>();
         freeIntervals.add(freeInterval);
         Assert.assertNotNull(freeIntervals);
-        final List<Task> tasks = SchedulerService.splitIntervals(freeIntervals);
-        Assert.assertNotNull(tasks);
-        Assert.assertEquals(1, tasks.size());
+        final List<Interval> intervals = SchedulerService.splitIntervals(freeIntervals);
+        Assert.assertNotNull(intervals);
+        Assert.assertEquals(1, intervals.size());
 
     }
 
@@ -62,13 +62,13 @@ public class SchedulerServiceTest {
         DateTime JanFirst4PM = new DateTime(2020, 01, 01, 15, 0);
         final DateTime plusMinutes = JanFirst4PM.plusMinutes(Constant.max_interval + Constant.min_interval);
 
-        Task freeInterval = new Task(Constant.FREE_INTERVAL_NAME, JanFirst4PM, plusMinutes);
-        final List<Task> freeIntervals = new ArrayList<>();
+        Interval freeInterval = new Interval(Constant.FREE_INTERVAL_NAME, JanFirst4PM, plusMinutes);
+        final List<Interval> freeIntervals = new ArrayList<>();
         freeIntervals.add(freeInterval);
         Assert.assertNotNull(freeIntervals);
-        final List<Task> tasks = SchedulerService.splitIntervals(freeIntervals);
-        Assert.assertNotNull(tasks);
-        Assert.assertEquals(2, tasks.size());
+        final List<Interval> intervals = SchedulerService.splitIntervals(freeIntervals);
+        Assert.assertNotNull(intervals);
+        Assert.assertEquals(2, intervals.size());
 
     }
 
@@ -77,18 +77,18 @@ public class SchedulerServiceTest {
         final DateTime JanFirst4PM = new DateTime(2020, 01, 01, 15, 0);
         final DateTime plusMinutes = JanFirst4PM.plusMinutes(Constant.max_interval + Constant.min_interval);
         final List<Project> projects  = new ArrayList<>();
-        Task freeInterval = new Task(Constant.FREE_INTERVAL_NAME, JanFirst4PM, plusMinutes);
-        final List<Task> freeIntervals = new ArrayList<>();
+        Interval freeInterval = new Interval(Constant.FREE_INTERVAL_NAME, JanFirst4PM, plusMinutes);
+        final List<Interval> freeIntervals = new ArrayList<>();
         freeIntervals.add(freeInterval);
-        final List<Task> schedule = SchedulerService.schedule(projects, freeIntervals);
+        final List<Interval> schedule = SchedulerService.schedule(projects, freeIntervals);
         Assert.assertNotNull(schedule);
     }
 
     @Test
     public void ScheduleShoyldReturnEmptyListWhenThereAreNoFreeIntervals() {
         final List<Project> projects  = new ArrayList<>();
-        final List<Task> freeIntervals = new ArrayList<>();
-        final List<Task> schedule = SchedulerService.schedule(projects, freeIntervals);
+        final List<Interval> freeIntervals = new ArrayList<>();
+        final List<Interval> schedule = SchedulerService.schedule(projects, freeIntervals);
         Assert.assertNotNull(schedule);
     }
 
@@ -97,8 +97,8 @@ public class SchedulerServiceTest {
         final DateTime JanFirst4PM = new DateTime(2020, 01, 01, 15, 0);
         final DateTime plusMinutes = JanFirst4PM.plusMinutes(Constant.min_interval);
 
-        Task freeInterval = new Task(Constant.FREE_INTERVAL_NAME, JanFirst4PM, plusMinutes);
-        final List<Task> freeIntervals = new ArrayList<>();
+        Interval freeInterval = new Interval(Constant.FREE_INTERVAL_NAME, JanFirst4PM, plusMinutes);
+        final List<Interval> freeIntervals = new ArrayList<>();
         freeIntervals.add(freeInterval);
 
         final List<Project> projects  = new ArrayList<>();
@@ -106,7 +106,7 @@ public class SchedulerServiceTest {
         projects.add(project);
 
 
-        final List<Task> schedule = SchedulerService.schedule(projects, freeIntervals);
+        final List<Interval> schedule = SchedulerService.schedule(projects, freeIntervals);
         Assert.assertNotNull(schedule);
         Assert.assertEquals(1, schedule.size());
         Assert.assertEquals(1, projects.size());
@@ -118,15 +118,15 @@ public class SchedulerServiceTest {
         final DateTime JanFirst4PM = new DateTime(2020, 01, 01, 15, 0);
         final DateTime plusMinutes = JanFirst4PM.plusMinutes(Constant.max_interval);
 
-        Task freeInterval = new Task(Constant.FREE_INTERVAL_NAME, JanFirst4PM, plusMinutes);
-        final List<Task> freeIntervals = new ArrayList<>();
+        Interval freeInterval = new Interval(Constant.FREE_INTERVAL_NAME, JanFirst4PM, plusMinutes);
+        final List<Interval> freeIntervals = new ArrayList<>();
         freeIntervals.add(freeInterval);
 
         final List<Project> projects  = new ArrayList<>();
         Project project = new Project("Read on OOP", 0, Constant.min_interval);
         projects.add(project);
 
-        final List<Task> schedule = SchedulerService.schedule(projects, freeIntervals);
+        final List<Interval> schedule = SchedulerService.schedule(projects, freeIntervals);
         Assert.assertNotNull(schedule);
         Assert.assertEquals(1, schedule.size());
         Assert.assertEquals(0, projects.size());
@@ -138,8 +138,8 @@ public class SchedulerServiceTest {
         final DateTime JanFirst4PM = new DateTime(2020, 01, 01, 15, 0);
         final DateTime plusMinutes = JanFirst4PM.plusMinutes(Constant.max_interval);
 
-        Task freeInterval = new Task(Constant.FREE_INTERVAL_NAME, JanFirst4PM, plusMinutes);
-        final List<Task> freeIntervals = new ArrayList<>();
+        Interval freeInterval = new Interval(Constant.FREE_INTERVAL_NAME, JanFirst4PM, plusMinutes);
+        final List<Interval> freeIntervals = new ArrayList<>();
         freeIntervals.add(freeInterval);
 
         final List<Project> projects  = new ArrayList<>();
@@ -147,8 +147,8 @@ public class SchedulerServiceTest {
         projects.add(project);
 
         SchedulerService schedulerService = new SchedulerService();
-        final List<Task> taskList = schedulerService.run(freeIntervals, projects, true);
-        Assert.assertNotNull(taskList);
+        final List<Interval> intervalList = schedulerService.run(freeIntervals, projects, true);
+        Assert.assertNotNull(intervalList);
 
     }
 }

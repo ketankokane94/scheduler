@@ -5,13 +5,11 @@ import com.google.api.services.calendar.model.Event;
 import com.google.api.services.calendar.model.EventDateTime;
 import com.google.api.services.calendar.model.Events;
 import models.Constant;
+import models.Interval;
 import org.joda.time.DateTime;
 
 import java.io.IOException;
 
-import models.Task;
-
-import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -19,9 +17,9 @@ import java.util.List;
 
 public class GetTaskService {
 
-    public List<Task> pullTasks(Calendar calendarService) {
+    public List<Interval> pullTasks(Calendar calendarService) {
 
-        if(calendarService == null){
+        if (calendarService == null) {
             return new ArrayList<>();
         }
 
@@ -42,49 +40,35 @@ public class GetTaskService {
     }
 
 
-    private Calendar getCalendar() {
-        ConnectionService connectionService = new ConnectionService();
-        Calendar calendarService = null;
-        try {
-            calendarService = connectionService.getCalendar();
-        } catch (GeneralSecurityException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return calendarService;
-    }
-
-
-    private List<Task> convertGoogleCalendarEventsToTasks(List<Event> items) {
-        List<Task> tasks = new ArrayList<>();
+    private List<Interval> convertGoogleCalendarEventsToTasks(List<Event> items) {
+        List<Interval> intervals = new ArrayList<>();
         for (Event event : items) {
-            Task task = new Task(event.getSummary(),
+            Interval interval = new Interval(event.getSummary(),
                     Constant.convertToDateTime(event.getStart()),
                     Constant.convertToDateTime(event.getEnd()));
-            tasks.add(task);
+            intervals.add(interval);
         }
-        return tasks;
+        return intervals;
     }
 
 
-    public void pushTasks(List<Task> intervals, Calendar calendarService) {
+    public void pushTasks(List<Interval> intervals, Calendar calendarService) {
 
-        for (Task task : intervals) {
-            if (task.getSummary().equals("wake up") || task.getSummary().equals("Sleep")) {
+        for (Interval interval : intervals) {
+            if (interval.getSummary().equals("wake up") || interval.getSummary().equals("Sleep")) {
                 continue;
             }
 
             Event event = new Event()
-                    .setSummary(task.getSummary());
+                    .setSummary(interval.getSummary());
 
             EventDateTime start = new EventDateTime()
-                    .setDateTime(Constant.convertToGoogleDateTime(task.getStart()));
+                    .setDateTime(Constant.convertToGoogleDateTime(interval.getStart()));
             event.setStart(start);
 
 
             EventDateTime end = new EventDateTime()
-                    .setDateTime(Constant.convertToGoogleDateTime(task.getEnd()));
+                    .setDateTime(Constant.convertToGoogleDateTime(interval.getEnd()));
             event.setEnd(end);
 
             try {
@@ -96,24 +80,24 @@ public class GetTaskService {
         }
     }
 
-    public List<Task> getTask() {
+    public List<Interval> getTask() {
         String today_date = "2019-07-20T";
-        List<Task> tasks = new LinkedList<>();
-        tasks.add(new Task("Sleep",
+        List<Interval> intervals = new LinkedList<>();
+        intervals.add(new Interval("Sleep",
                 DateTime.parse(today_date + "00:00:00"),
                 DateTime.parse(today_date + "09:40:00")));
 
-        tasks.add(new Task("Lunch", DateTime.parse(today_date + "13:00:00"),
+        intervals.add(new Interval("Lunch", DateTime.parse(today_date + "13:00:00"),
                 DateTime.parse(today_date + "13:45:00")));
 
-        tasks.add(new Task("Dinner", DateTime.parse(today_date + "20:30:00"),
+        intervals.add(new Interval("Dinner", DateTime.parse(today_date + "20:30:00"),
                 DateTime.parse(today_date + "21:00:00")));
 
-        tasks.add(new Task("Gym", DateTime.parse(today_date + "16:30:00"),
+        intervals.add(new Interval("Gym", DateTime.parse(today_date + "16:30:00"),
                 DateTime.parse(today_date + "17:00:00")));
 
 
-        return tasks;
+        return intervals;
     }
 
 }
