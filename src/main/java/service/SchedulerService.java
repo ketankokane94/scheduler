@@ -10,22 +10,6 @@ import java.util.*;
 
 public class SchedulerService {
 
-    public static void printToConsole(List<Project> projects, List<Task> assignedInterval) {
-        for (Task item : assignedInterval)
-            System.out.println(item);
-
-        for (Project proj : projects) {
-            System.out.println(proj);
-        }
-    }
-
-//    public static void mergeTasks(List<Task> assignedInterval, List<Task> thinsgToDo) {
-//        for (Task thingToDo : thinsgToDo) {
-//            assignedInterval.add(new Task(thingToDo.getSummary(), thingToDo.getStart(), thingToDo.getEnd()));
-//        }
-//        Collections.sort(assignedInterval);
-//    }
-
     public static List<Task> schedule(List<Project> projects, List<Task> unassignedTasks) {
         // while something to schedule and any empty intervals remaining r
         List<Task> result = new ArrayList<>();
@@ -60,9 +44,7 @@ public class SchedulerService {
     public static List<Task> splitIntervals(List<Task> freeIntervals) {
         // Comparator to compare two tasks based on Length of Duration
 
-        Comparator<Task> comparator = (o1, o2) -> {
-            return o2.getDuration() - o1.getDuration();
-        };
+        Comparator<Task> comparator = (o1, o2) -> o2.getDuration() - o1.getDuration();
 
         List<Task> result = new ArrayList<>();
 
@@ -90,9 +72,10 @@ public class SchedulerService {
     }
 
     /**
-     * @param assignedTask
+     * @param assignedTask Need to be sorted, cannot deal with overlapping intervals
      * @return
      */
+    // TODO: remove magic number and test case for that
     public static List<Task> getFreeIntervals(List<Task> assignedTask) {
         List<Task> freeIntervalsList = new ArrayList<>();
         for (int i = 1; i < assignedTask.size(); i++) {
@@ -107,17 +90,13 @@ public class SchedulerService {
         return freeIntervalsList;
     }
 
-//    public List<Task> run(List<Task> tasks, List<Project> projects, boolean verbose) {
-//
-//        Collections.sort(tasks);
-//        PriorityQueue<Task> unassignedInterval = getFreeIntervals(tasks);
-//        List<Task> assignedInterval = schedule(projects, unassignedInterval);
-//        printToConsole(projects, assignedInterval);
-////        if (verbose){
-////            mergeTasks(assignedInterval, tasks);
-////            printToConsole(projects, assignedInterval);
-////        }
-//        return assignedInterval;
-//    }
+    public List<Task> run(List<Task> tasks, List<Project> projects, boolean verbose) {
+        Collections.sort(tasks); //sort them based on their start time
+        // get gaps in the already assigned Intervals
+        List<Task> unassignedIntervals = getFreeIntervals(tasks);
+        // fill the gaps with the projects
+        List<Task> assignedIntervals = schedule(projects, unassignedIntervals);
+        return assignedIntervals;
+    }
 
 }
